@@ -4,15 +4,20 @@ pygame.init()
 #screen
 screen = pygame.display.set_mode((1000, 800))
 
-background = pygame.image.load('clouds.png')
+#title
+pygame.display.set_caption("Nomad")
+theme = pygame.image.load("planet.jpeg")
+
+#icon
+icon = pygame.image.load("treasure-map.png")
+pygame.display.set_icon(icon)
 
 # -------------------------------------------------------------------------
 # Notes
 
-# You now must add a Title, with a font
 # try and animate something running and then add it at the bottom
 # then you must try and make a mouse tracking support for a click funtion
-# for now we shall not require a hover effect
+# for now we shall not require a hover effect (but we can study further)
 
 # End of Notes
 # -------------------------------------------------------------------------
@@ -54,6 +59,9 @@ about_block = False
 level_block = False
 exit_block = False
 
+# images
+title = pygame.image.load("nomad.png")
+
 #main loop
 run = True
 
@@ -61,6 +69,9 @@ while run:
 
     #screen styles
     screen.fill((55,198,255))
+    screen.blit(theme, (0, 0))
+
+    screen.blit(title, (250, 10))
 
     #events
     for event in pygame.event.get():
@@ -71,10 +82,10 @@ while run:
     # the meniu
 
     # text movements
-    play_x += 3
-    about_x += 3
-    levels_x += 3
-    exit_x += 3
+    play_x += 3.7
+    about_x += 3.7
+    levels_x += 3.7
+    exit_x += 3.7
 
     # text and box settings
     if play_x >= 455:
