@@ -1,4 +1,5 @@
-import pygame, math, sys
+import pygame
+import sys
 from pygame.locals import *
 pygame.init()
 
@@ -14,9 +15,8 @@ icon = pygame.image.load("treasure-map.png")
 pygame.display.set_icon(icon)
 
 # -------------------------------------------------------------------------
-# Notes
+# Notes3
 
-# then you must try and make a mouse tracking support for a click funtion
 # for now we shall not require a hover effect (but we can study further)
 
 # End of Notes
@@ -85,12 +85,6 @@ while run:
 
     screen.blit(title, (250, 10))
 
-    #events
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-
     # the meniu
 
     # text movements
@@ -123,15 +117,19 @@ while run:
     screen.blit(exit, (exit_x, exit_y))
 
     if play_block is True:
+        play_button = pygame.Rect((350, 200, 300, 50))
         pygame.draw.rect(screen, blue, pygame.Rect(350, 200, 300, 50), 2)
 
     if about_block is True:
+        about_button = pygame.Rect((350, 300, 300, 50))
         pygame.draw.rect(screen, blue, pygame.Rect(350, 300, 300, 50), 2)
 
     if level_block is True:
+        level_button = pygame.Rect((350, 400, 300, 50))
         pygame.draw.rect(screen, blue, pygame.Rect(350, 400, 300, 50), 2)
     
     if exit_block is True:
+        exit_button = pygame.Rect((350, 500, 300, 50))
         pygame.draw.rect(screen, blue, pygame.Rect(350, 500, 300, 50), 2)
     
 
@@ -149,6 +147,28 @@ while run:
         screen.blit(image, (470, 600))
 
         spaceman_value += 1
+    
+    #events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_pos = event.pos
+
+            if play_button.collidepoint(mouse_pos):
+                print("The PLAY button has been pushed!")
+            
+            elif about_button.collidepoint(mouse_pos):
+                print("The About button has been pushed!")
+            
+            elif level_button.collidepoint(mouse_pos):
+                print("The Level button has been pushed!")
+            
+            elif exit_button.collidepoint(mouse_pos):
+                pygame.quit()
+                quit() 
 
     # end of the menu section
 
