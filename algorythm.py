@@ -16,10 +16,6 @@ pygame.display.set_icon(icon)
 # -------------------------------------------------------------------------
 # Notes
 
-# now we need to red 
-
-# --> At the end of styling the sheet <--
-
 # then you must try and make a mouse tracking support for a click funtion
 # for now we shall not require a hover effect (but we can study further)
 
