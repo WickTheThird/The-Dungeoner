@@ -1,6 +1,12 @@
+# library stuff
 import pygame
 import sys
 from pygame.locals import *
+
+# files import
+
+from start import *
+
 pygame.init()
 
 #screen
@@ -17,7 +23,7 @@ pygame.display.set_icon(icon)
 # -------------------------------------------------------------------------
 # Notes3
 
-# for now we shall not require a hover effect (but we can study further)
+# add functional screens for each button
 
 # End of Notes
 # -------------------------------------------------------------------------
@@ -26,6 +32,7 @@ pygame.display.set_icon(icon)
 red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
+cyan = (0,255,255)
 
 # fonts
 font = pygame.font.Font('freesansbold.ttf', 32)
@@ -71,6 +78,7 @@ space_man_sprites = [ pygame.image.load("graphics/SpaceMan/spaceman-1.tiff"), py
 
 #main loop
 run = True
+run_2 = False
 
 # value used in the spaceman animation process
 spaceman_value = 0
@@ -158,18 +166,29 @@ while run:
             mouse_pos = event.pos
 
             if play_button.collidepoint(mouse_pos):
+                play = font.render("Start", False, cyan)
                 print("The PLAY button has been pushed!")
-            
+                
+                
             elif about_button.collidepoint(mouse_pos):
+                about = font.render("About", False, cyan)
                 print("The About button has been pushed!")
             
             elif level_button.collidepoint(mouse_pos):
+                levels = font.render("Levels", False, cyan)
                 print("The Level button has been pushed!")
             
             elif exit_button.collidepoint(mouse_pos):
+                exit = font.render("Quit", False, cyan)
                 pygame.quit()
-                quit() 
+                quit()
+        
+        if event.type == pygame.MOUSEBUTTONUP:
+
+           play = font.render("Start",  False, blue)
+           about = font.render("About",  False, blue)
+           levels = font.render("Levels",  False, blue)
+           exit = font.render("Quit",  False, blue)
+
 
     # end of the menu section
-
-    pygame.display.update()
