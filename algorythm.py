@@ -5,7 +5,6 @@ from pygame.locals import *
 
 # files import
 
-from start import *
 
 pygame.init()
 
@@ -78,7 +77,6 @@ space_man_sprites = [ pygame.image.load("graphics/SpaceMan/spaceman-1.tiff"), py
 
 #main loop
 run = True
-run_2 = False
 
 # value used in the spaceman animation process
 spaceman_value = 0
