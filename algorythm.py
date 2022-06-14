@@ -13,6 +13,7 @@ pygame.init()
 
 #screen
 screen = pygame.display.set_mode((1158, 775))
+play_screen = pygame.display.set_mode((1158, 775))
 
 #title
 pygame.display.set_caption("Nomad")
@@ -22,13 +23,11 @@ theme = pygame.image.load("wallpaper.jpeg")
 icon = pygame.image.load("treasure-map.png")
 pygame.display.set_icon(icon)
 
-
-#main loop -----------------------------------------------------------------
+#main loop
 run = True
+play_run = False
 
-# value used in the spaceman animation process
 spaceman_value = 0
-# --> this will be used as a framerate handler
 clock = pygame.time.Clock()
 
 while run:
@@ -138,7 +137,10 @@ while run:
 
                 # now we must do the block animation
                 stone_load = True
-                
+
+                # play run test
+                play_run = True
+
             elif about_button.collidepoint(mouse_pos):
                 about = font.render("About", False, cyan)
 
@@ -242,5 +244,22 @@ while run:
             book_load_x = -1200
         
         screen.blit(book_shelf, (book_load_x, 0))
+    
+    # END OF THE MENU
+
+    # start of PLAY run
+
+    if play_run is True and stone_wall_x == 0:
+        
+        while play_run:
+
+            play_screen.fill((55,198,255))
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+            pygame.display.update()
 
     pygame.display.update()
