@@ -225,7 +225,7 @@ while run:
            levels = font.render("Levels",  False, blue)
            exit = font.render("Quit",  False, blue)
 
-           if over_button is False and back_arrow is True and about_stone is False:
+           if over_button is False and back_arrow is True and about_stone is False and stone_load is False:
                 # button settings
                     over_button = True
 
