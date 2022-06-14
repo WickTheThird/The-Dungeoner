@@ -5,8 +5,10 @@
 
 # PLAY button
 
-#then it displays some level information while loading (even though everything)
-#is already pre loaded...we must create a demo map
+# find the font perfect for the loading screen
+# there is a liitle issue with the stone wall animatijon
+# since we must repose the tabs after switching between the about and levels
+# the about stone slows down
 
 # ABOUT ---- section displays the story of the nomad which i believe to be simple
 #you are a nomad of the dungeon warriors...your job is to simply find the top

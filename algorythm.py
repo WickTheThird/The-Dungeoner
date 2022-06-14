@@ -1,4 +1,6 @@
 # library stuff
+from re import A
+from tkinter.tix import Tree
 import pygame
 from pygame.locals import *
 
@@ -8,6 +10,7 @@ from text import *
 from swiches import *
 from images_graph import *
 from init_pos import *
+from levels.lvl_1 import lvl1
 
 pygame.init()
 
@@ -29,6 +32,13 @@ play_run = False
 
 spaceman_value = 0
 clock = pygame.time.Clock()
+
+# other
+
+# other screen
+
+def lvl_1(play_screen, play_run):
+    lvl1(play_screen, play_run)
 
 while run:
 
@@ -91,6 +101,7 @@ while run:
     # adding the spaceman waving animation
 
     if play_block is True and about_block is True and level_block is True and exit_block is True and spaceman_dis is True:
+
         # setting the framerate
         clock.tick(20)
 
@@ -107,11 +118,10 @@ while run:
     for event in pygame.event.get():
 
         # __init__
-
         back_dis = pygame.draw.circle(screen, (0,0,0), [40, 40], 20, 1)
+        start_p_dis = pygame.Rect(420, 450, 350, 100)
 
         # end of __init__
-
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
@@ -119,61 +129,115 @@ while run:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
 
-            if play_button.collidepoint(mouse_pos):
-                play = font.render("Start", False, cyan)
-                print("The PLAY button has been pushed!")
+            try:
+                if play_button.collidepoint(mouse_pos) and play_block is True:
+                    play = font.render("Start", False, cyan)
+                    print("The PLAY button has been pushed!")
 
-                # button settings
-                over_button = False
+                    # button settings
+                    over_button = False
 
-                play_dis = False
-                about_dis = False
-                levels_dis = False
-                exit_dis = False
+                    play_dis = False
+                    about_dis = False
+                    levels_dis = False
+                    exit_dis = False
 
-                # title and spaceman
-                title_dis = False
-                spaceman_dis = False
+                    # title and spaceman
+                    title_dis = False
+                    spaceman_dis = False
 
-                # now we must do the block animation
-                stone_load = True
+                    # now we must do the block animation
+                    stone_load = True
 
-                # play run test
-                play_run = True
+                    #start stuff
+                    start_button_p = True
 
-            elif about_button.collidepoint(mouse_pos):
-                about = font.render("About", False, cyan)
+                elif about_button.collidepoint(mouse_pos) and about_dis is True:
+                    about = font.render("About", False, cyan)
 
-                about_stone = True
-                back_arrow = True
+                    # restrictions
 
-                print("The About button has been pushed!")
+                    # button settings
+                    over_button = False
+
+                    play_block = False
+                    play_dis = False
+                    about_dis = False
+                    levels_dis = False
+                    exit_dis = False
+
+                    # title and spaceman
+                    title_dis = False
+                    spaceman_dis = False
+
+                    # end
+
+                    about_stone = True
+                    back_arrow = True
+
+                    print("The About button has been pushed!")
+                
+                elif level_button.collidepoint(mouse_pos) and levels_dis is True:
+                    levels = font.render("Levels", False, cyan)
+
+                    # button settings
+                    over_button = False
+
+                    play_block = False
+                    play_dis = False
+                    about_dis = False
+                    levels_dis = False
+                    exit_dis = False
+
+                    # title and spaceman
+                    title_dis = False
+                    spaceman_dis = False
+
+                    book_load = True
+                    back_arrow = True
+
+                    print("The Level button has been pushed!")
+                
+                elif exit_button.collidepoint(mouse_pos) and exit_dis is True:
+                    exit = font.render("Quit", False, cyan)
+
+                    print("The Quit button has been pushed!")
+
+                    pygame.quit()
+                    quit()
+
+                if back_dis.collidepoint(mouse_pos) and back_arrow is True and about_stone is True:
+                    about_stone = False
+                
+                elif back_dis.collidepoint(mouse_pos) and back_arrow is True and book_load is True:
+                    book_load = False
+
+                if start_p_dis.collidepoint(mouse_pos) and stone_wall_x >= 0:
+                    play_run = True
+
+            except:
+                pass
             
-            elif level_button.collidepoint(mouse_pos):
-                levels = font.render("Levels", False, cyan)
-
-                book_load = True
-                back_arrow = True
-
-                print("The Level button has been pushed!")
-            
-            elif exit_button.collidepoint(mouse_pos):
-                exit = font.render("Quit", False, cyan)
-                pygame.quit()
-                quit()
-
-            if back_dis.collidepoint(mouse_pos) and back_arrow is True and about_stone is True:
-                 about_stone = False
-            
-            elif back_dis.collidepoint(mouse_pos) and back_arrow is True and book_load is True:
-                book_load = False
-        
         if event.type == pygame.MOUSEBUTTONUP:
 
            play = font.render("Start",  False, blue)
            about = font.render("About",  False, blue)
            levels = font.render("Levels",  False, blue)
            exit = font.render("Quit",  False, blue)
+
+           if over_button is False and back_arrow is True and about_stone is False:
+                # button settings
+                    over_button = True
+
+                    play_block = True
+                    play_dis = True
+                    about_dis = True
+                    levels_dis = True
+                    exit_dis = True
+
+                    # title and spaceman
+                    title_dis = True
+                    spaceman_dis = True
 
     # end of the menu section
 
@@ -249,17 +313,14 @@ while run:
 
     # start of PLAY run
 
-    if play_run is True and stone_wall_x == 0:
-        
-        while play_run:
+    if stone_load is True and stone_wall_x == 0:
+        screen.blit(lvl_nr, (lvl_x, lvl_y))
+        screen.blit(start_p, (start_p_x, start_p_y))
+        pygame.draw.rect(screen, blue, pygame.Rect(420, 450, 350, 100), 2)
 
-            play_screen.fill((55,198,255))
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
-
-            pygame.display.update()
+        start_button_p = True
+    
+    if play_run is True:
+        lvl_1(play_screen, play_run)
 
     pygame.display.update()
