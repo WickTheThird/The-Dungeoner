@@ -225,7 +225,7 @@ while run:
     if book_load is True:
         book_load_x += 70
 
-        if book_load_x >= 00:
+        if book_load_x >= 0:
             book_load_x = 0
         
         screen.blit(book_shelf, (book_load_x, 0))
