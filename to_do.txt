@@ -1,0 +1,39 @@
+# -------------------------------------------------------------------------
+# Notes3
+
+# add functional screens for each button
+
+# PLAY button
+
+#then it displays some level information while loading (even though everything)
+#is already pre loaded...we must create a demo map
+
+# ABOUT ---- section displays the story of the nomad which i believe to be simple
+#you are a nomad of the dungeon warriors...your job is to simply find the top
+#of the dungeon and see where the outside begins
+# the quest won't be wasy as levels will get haarder and harder
+#fighting dragons and other mobs
+
+#LEVELS will be a progress track
+# this shows all the levels due to be played
+# and you can replay some of them, perhaps add a star system
+
+#then the quit is a quit
+
+# End of Notes
+# -------------------------------------------------------------------------
+
+# future use code
+
+def stone_block_dis():
+
+    white_stone = stone_block()
+
+    for row_index, row in enumerate(WORLD_MAP):
+           for col_index, col in enumerate(row):
+               x = col_index * TILESIZE
+               y = row_index * TILESIZE
+               if col == 'x':
+                  screen.blit(white_stone, (x, y))
+
+# end of future use code
