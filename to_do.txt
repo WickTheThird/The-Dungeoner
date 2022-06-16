@@ -11,16 +11,29 @@
 # the about stone slows down
 
 # ABOUT ---- section displays the story of the nomad which i believe to be simple
-#you are a nomad of the dungeon warriors...your job is to simply find the top
-#of the dungeon and see where the outside begins
-# the quest won't be wasy as levels will get haarder and harder
-#fighting dragons and other mobs
+
+# in the about section, the events aren't mapped proprely
+# we mus go throuh it again
 
 #LEVELS will be a progress track
+
+For the progress track we shall create a map that displays the charactoer over the level that they are 
+We shall handle only 30 levels, in which we shall have a cool little linking between the levels --> I want to give it a seamless experience
+
 # this shows all the levels due to be played
 # and you can replay some of them, perhaps add a star system
 
-#then the quit is a quit
+
+# ISSUES TO FIX 
+
+For now the extrascreen works, but the swiches aren't coordonated
+In order to coordonate them we must go through the code again and remap the events
+
+After remapping the events you may start drawing the pixel art for the buttons
+We might also want to create our own background
+
+We must also add a fullscreen version, this would only have an imact on the capera,
+display positions and so on.
 
 # End of Notes
 # -------------------------------------------------------------------------

@@ -3,7 +3,6 @@
 # i believe this is necessary as it is hard to keep track of everything on one single large file
 # mostly displaying events will go here
 
-from math import fabs
 import pygame
 from pygame.locals import *
 

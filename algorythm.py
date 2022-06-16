@@ -130,21 +130,15 @@ while run:
             mouse_pos = event.pos
 
             try:
-                if play_button.collidepoint(mouse_pos) and play_block is True:
+                if play_button.collidepoint(mouse_pos) and play_dis is True:
                     play = font.render("Start", False, cyan)
                     print("The PLAY button has been pushed!")
 
-                    # button settings
+                    # dissapearing text
                     over_button = False
 
-                    play_dis = False
-                    about_dis = False
-                    levels_dis = False
-                    exit_dis = False
-
-                    # title and spaceman
-                    title_dis = False
-                    spaceman_dis = False
+                    # dissapearing boxes
+                    
 
                     # now we must do the block animation
                     stone_load = True
@@ -155,46 +149,10 @@ while run:
                 elif about_button.collidepoint(mouse_pos) and about_dis is True:
                     about = font.render("About", False, cyan)
 
-                    # restrictions
-
-                    # button settings
-                    over_button = False
-
-                    play_block = False
-                    play_dis = False
-                    about_dis = False
-                    levels_dis = False
-                    exit_dis = False
-
-                    # title and spaceman
-                    title_dis = False
-                    spaceman_dis = False
-
-                    # end
-
-                    about_stone = True
-                    back_arrow = True
-
                     print("The About button has been pushed!")
                 
                 elif level_button.collidepoint(mouse_pos) and levels_dis is True:
                     levels = font.render("Levels", False, cyan)
-
-                    # button settings
-                    over_button = False
-
-                    play_block = False
-                    play_dis = False
-                    about_dis = False
-                    levels_dis = False
-                    exit_dis = False
-
-                    # title and spaceman
-                    title_dis = False
-                    spaceman_dis = False
-
-                    book_load = True
-                    back_arrow = True
 
                     print("The Level button has been pushed!")
                 
@@ -207,45 +165,22 @@ while run:
                     quit()
 
                 if back_dis.collidepoint(mouse_pos) and back_arrow is True and about_stone is True:
-                    about_stone = False
+                   about_block = False
                 
                 elif back_dis.collidepoint(mouse_pos) and back_arrow is True and book_load is True:
-                    book_load = False
+                    pass
 
                 if start_p_dis.collidepoint(mouse_pos) and stone_wall_x >= 0:
                     play_run = True
 
             except:
                 pass
-            
-        if event.type == pygame.MOUSEBUTTONUP:
-
-           play = font.render("Start",  False, blue)
-           about = font.render("About",  False, blue)
-           levels = font.render("Levels",  False, blue)
-           exit = font.render("Quit",  False, blue)
-
-           if over_button is False and back_arrow is True and about_stone is False and stone_load is False:
-                # button settings
-                    over_button = True
-
-                    play_block = True
-                    play_dis = True
-                    about_dis = True
-                    levels_dis = True
-                    exit_dis = True
-
-                    # title and spaceman
-                    title_dis = True
-                    spaceman_dis = True
 
     # end of the menu section
 
     # the PLAY section
     # displaying blocks or anyother pieces of graphics 
 
-    if stone_load == False:
-        screen.blit(stone_wall, (-1300, 0))
     
     if about_stone == False and back_arrow is False:
         screen.blit(white_stone_wall, (-1300, 0))
