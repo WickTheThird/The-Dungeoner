@@ -1,6 +1,5 @@
 # library stuff
-from re import A
-from tkinter.tix import Tree
+
 import pygame
 from pygame.locals import *
 
@@ -96,7 +95,7 @@ while run:
     if exit_block is True and exit_dis is True:
         exit_button = pygame.Rect((350, 500, 300, 50))
         pygame.draw.rect(screen, blue, pygame.Rect(420, 500, 300, 50), 2)
-    
+
 
     # adding the spaceman waving animation
 
@@ -113,7 +112,7 @@ while run:
         screen.blit(image, (540, 600))
 
         spaceman_value += 1
-    
+
     #events
     for event in pygame.event.get():
 
@@ -138,7 +137,13 @@ while run:
                     over_button = False
 
                     # dissapearing boxes
-                    
+                    play_dis = False
+                    about_dis = False
+                    exit_dis = False
+                    levels_dis = False
+
+                    title_dis = False
+                    spaceman_dis = False
 
                     # now we must do the block animation
                     stone_load = True
@@ -148,27 +153,83 @@ while run:
 
                 elif about_button.collidepoint(mouse_pos) and about_dis is True:
                     about = font.render("About", False, cyan)
-
                     print("The About button has been pushed!")
+
+                    # dissapearing text
+                    over_button = False
+
+                    # disapering boxes
+                    play_dis = False
+                    about_dis = False
+                    exit_dis = False
+                    levels_dis = False
+
+                    # animation enabled
+                    about_stone = True
+
+                    # return button
+                    back_arrow = True
                 
                 elif level_button.collidepoint(mouse_pos) and levels_dis is True:
                     levels = font.render("Levels", False, cyan)
-
                     print("The Level button has been pushed!")
+
+                    # dissapearing text
+                    over_button = False
+
+                    # dissapearing boxes
+                    play_dis = False
+                    about_dis = False
+                    levels_dis = False
+                    exit_dis = False
+
+                    # animation enabled ``
+                    book_load = True
+
+                    # return button
+                    back_arrow = True
                 
                 elif exit_button.collidepoint(mouse_pos) and exit_dis is True:
                     exit = font.render("Quit", False, cyan)
-
                     print("The Quit button has been pushed!")
 
+                    # NO EVENTS REQUIRED, BUT EXIT
                     pygame.quit()
                     quit()
 
                 if back_dis.collidepoint(mouse_pos) and back_arrow is True and about_stone is True:
-                   about_block = False
+
+                   # dissapearing animation
+                   about_stone = False
+
+                   # reapearing text
+                   over_button = True
+
+                   # reapearing boxes
+                   play_dis = True
+                   about_dis = True
+                   levels_dis = True
+                   exit_dis = True
+
+                   #color
+                   about = font.render("About", False, blue)
+
                 
                 elif back_dis.collidepoint(mouse_pos) and back_arrow is True and book_load is True:
-                    pass
+                    book_load = False
+
+                    # reapearing text
+                    over_button = True
+
+                   # reapearing boxes
+                    play_dis = True
+                    about_dis = True
+                    levels_dis = True
+                    exit_dis = True
+
+                    # color
+                    levels = font.render("Levels", False, blue)
+
 
                 if start_p_dis.collidepoint(mouse_pos) and stone_wall_x >= 0:
                     play_run = True
