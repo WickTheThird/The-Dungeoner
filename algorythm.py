@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # library stuff
 
 import pygame
@@ -10,6 +11,7 @@ from swiches import *
 from images_graph import *
 from init_pos import *
 from levels.lvl_1 import lvl1
+from resource_path import resource_path
 
 pygame.init()
 
@@ -19,10 +21,14 @@ play_screen = pygame.display.set_mode((1158, 775))
 
 #title
 pygame.display.set_caption("Nomad")
-theme = pygame.image.load("wallpaper.jpeg")
+
+theme_url = resource_path("wallpaper.jpeg")
+theme = pygame.image.load(theme_url)
 
 #icon
-icon = pygame.image.load("treasure-map.png")
+
+icon_url = resource_path("treasure-map.png")
+icon = pygame.image.load(icon_url)
 pygame.display.set_icon(icon)
 
 #main loop
@@ -164,6 +170,10 @@ while run:
                     exit_dis = False
                     levels_dis = False
 
+                    # the main page animations
+                    spaceman_dis = False
+                    title_dis = False
+
                     # animation enabled
                     about_stone = True
 
@@ -182,6 +192,10 @@ while run:
                     about_dis = False
                     levels_dis = False
                     exit_dis = False
+
+                    # the main page animations
+                    spaceman_dis = False
+                    title_dis = False
 
                     # animation enabled ``
                     book_load = True
@@ -205,6 +219,10 @@ while run:
                    # reapearing text
                    over_button = True
 
+                   # reapeaaring main animations on the main page
+                   title_dis = True
+                   spaceman_dis = True
+
                    # reapearing boxes
                    play_dis = True
                    about_dis = True
@@ -227,9 +245,12 @@ while run:
                     levels_dis = True
                     exit_dis = True
 
-                    # color
-                    levels = font.render("Levels", False, blue)
+                    # reapeaaring main animations on the main page
+                    title_dis = True
+                    spaceman_dis = True
 
+                    # text and color/
+                    levels = font.render("Levels", False, blue)
 
                 if start_p_dis.collidepoint(mouse_pos) and stone_wall_x >= 0:
                     play_run = True
