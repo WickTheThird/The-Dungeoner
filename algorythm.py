@@ -10,7 +10,7 @@ from text import *
 from swiches import *
 from images_graph import *
 from init_pos import *
-from levels.lvl_1 import lvl1
+from levels.lvl_1.lvl_1 import lvl1
 from resource_path import resource_path
 
 pygame.init()
@@ -57,10 +57,10 @@ while run:
     # the meniu
 
     # text movements
-    play_x += 3.7
-    about_x += 3.7
-    levels_x += 3.7
-    exit_x += 3.7
+    play_x += 9
+    about_x += 9
+    levels_x += 9
+    exit_x += 9
 
     # text and box settings
     if play_x >= 505:
@@ -271,7 +271,7 @@ while run:
 
     if stone_load == True:
         
-        stone_wall_x += 10
+        stone_wall_x += 50
 
         if stone_wall_x >= 0:
             stone_wall_x = 0
@@ -295,7 +295,7 @@ while run:
     
     elif about_stone is False and back_arrow is True:
 
-        white_stone_wall_x -= 70
+        white_stone_wall_x -= 100
 
         if white_stone_wall_x <= -1300:
             white_stone_wall_x = -1300
@@ -319,7 +319,7 @@ while run:
 
     elif book_load is False and back_arrow is True:
         
-        book_load_x -= 70
+        book_load_x -= 100
 
         if book_load_x <= -1200:
             book_load_x = -1200

@@ -5,6 +5,8 @@
 import pygame
 from pygame.locals import *
 
+from resource_path import resource_path
+
 pygame.init()
 
 # colors used
@@ -16,6 +18,7 @@ dark_blue = (28, 0, 209)
 black = (0,0,0)
 
 # fonts
+
 font = pygame.font.Font('freesansbold.ttf', 32)
 font_play = pygame.font.Font('freesansbold.ttf', 100)
 font_start_p = pygame.font.Font('freesansbold.ttf', 80)

@@ -71,7 +71,7 @@ stone_wall = pygame.image.load(stone_wall_url)
 stone_wall = pygame.transform.scale(stone_wall, (1158, 775))
 
 white_stone_wall_url = resource_path("graphics/terrain/white_stone_wall.png")
-white_stone_wall = pygame.image.load(white_stone_wall_x)
+white_stone_wall = pygame.image.load(white_stone_wall_url)
 white_stone_wall = pygame.transform.scale(white_stone_wall, (1158, 775))
 
 back_arrow_dis_url = resource_path("graphics/dirs/back-button.png")
@@ -79,5 +79,5 @@ back_arrow_dis = pygame.image.load(back_arrow_dis_url)
 back_arrow_dis = pygame.transform.scale(back_arrow_dis, (40, 40))
 
 book_shelf_url = resource_path("graphics/terrain/book_shelf.png")
-book_shelf = pygame.image.load(back_arrow_dis_url)
+book_shelf = pygame.image.load(book_shelf_url)
 book_shelf = pygame.transform.scale(book_shelf, (1160, 775))
