@@ -35,20 +35,25 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE):
                y = row_index * TILESIZE
 
                if col == 'B':
-
                   screen.blit(dark_stone, (x, y))
-               
 
-def player_update(screen, WORLD_MAP, TILESIZE, change_x, change_y):
+def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
     player = main_player()
 
     for row_index, row in enumerate(WORLD_MAP):
-        for col_index, col in enumerate(row):
+           for col_index, col in enumerate(row):
+               x = col_index * TILESIZE
+               y = row_index * TILESIZE
 
-            x = col_index * TILESIZE + change_x
-            y = row_index * TILESIZE + change_y
+               if col == 'P':
+                  screen.blit(player, (x, y))
 
-            if col == 'P':
+                  return [x, y]
 
-                screen.blit(player, (x, y))
+
+
+def player_dis(screen, x, y):
+    player = main_player()
+
+    screen.blit(player, (x, y))

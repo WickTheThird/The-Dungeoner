@@ -10,7 +10,12 @@ from images_graph import *
 
 def lvl1(play_screen, play_run):
 
+    # movement change
+
+    player_mov = False
+
     # positioning
+    player_init_coords = [0, 0]
 
     player_x_change = 0
     player_y_change = 0
@@ -34,27 +39,69 @@ def lvl1(play_screen, play_run):
 
                 # moving the character
 
+                # going vertically
+
+                # up-right
+                if event.key == pygame.K_d and event.key == pygame.K_w:
+                    print("UP-RIGHT has been pressed")
+
+                    player_y_change += 0
+                    player_x_change += 0
+
+                    player_mov = True
+                
+                # down-right
+                if event.key == pygame.K_d and event.key == pygame.K_s:
+                    print("DOWN-RIGHT has been pressed")
+
+                    player_y_change -= 0
+                    player_x_change += 0
+                
+                # up-left
+                if event.key == pygame.K_a and event.key == pygame.K_w:
+                    print("UP-LEFT has been pressed")
+
+                    player_y_change += 0
+                    player_x_change -= 0
+                
+                # down-left
+                if event.key == pygame.K_a and event.key == pygame.K_s:
+                    print("DOWN-LEFT has been pressed")
+
+                    player_y_change -= 0
+                    player_x_change -= 0
+
                 # right_left (respectively)
-                if event.key == pygame.K_d:
+                if event.key == pygame.K_d and not (event.key == pygame.K_s or event.key == pygame.K_w):
                     print("D has been pressed -- RIGHT")
 
-                    player_x_change = 10
+                    player_mov = True
 
-                if event.key == pygame.K_a:
+                    player_x_change += 10
+
+                if event.key == pygame.K_a and not (event.key == pygame.K_s or event.key == pygame.K_w):
                     print("A has been pressed -- LEFT")
                     
-                    player_x_change = -10
+                    player_x_change -= 10
+
+                    player_mov = True
 
                 # down_up (respectively)
-                if event.key == pygame.K_s:
+                if event.key == pygame.K_s and not (event.key == pygame.K_a or event.key == pygame.K_d):
                     print("S has been pressed --  DOWN")
                    
-                    player_y_change = 10
+                    player_y_change += 10
 
-                if event.key == pygame.K_w:
+                    player_mov = True
+
+                if event.key == pygame.K_w and not (event.key == pygame.K_a or event.key == pygame.K_d):
                     print("W has been pressed -- UP")
                     
-                    player_y_change = -10
+                    player_y_change -= 10
+
+                    player_mov = True
+
+
             
             if event.type == pygame.KEYUP:
                 
@@ -66,6 +113,17 @@ def lvl1(play_screen, play_run):
                     player_x_change = 0
 
         
+        # displaying the borders
         stone_block_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
-        player_update(play_screen, WORLD_MAP_L1, TILESIZE_L1, player_x_change, player_y_change)
+
+        # displaying the player
+
+        if player_mov is False:
+            player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
+        else:
+            player_init_coords[0] += + player_x_change
+            player_init_coords[1] += player_y_change
+
+            player_dis(play_screen, player_init_coords[0], player_init_coords[1])
+
         pygame.display.update()
