@@ -25,6 +25,8 @@ WORLD_MAP_L1 = [
 
 # generating the map
 
+border_poz = []
+
 def stone_block_dis(screen, WORLD_MAP, TILESIZE):
 
     dark_stone = dark_stone_wall()
@@ -36,6 +38,8 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE):
 
                if col == 'B':
                   screen.blit(dark_stone, (x, y))
+
+                  border_poz.append([x, y])
 
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
