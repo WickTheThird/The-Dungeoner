@@ -25,7 +25,9 @@ WORLD_MAP_L1 = [
 
 # generating the map
 
-border_poz = []
+black = (0,0,0)
+
+graph = []
 
 def stone_block_dis(screen, WORLD_MAP, TILESIZE):
 
@@ -37,9 +39,11 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE):
                y = row_index * TILESIZE
 
                if col == 'B':
+
+                  graph.append([x, y])
+
                   screen.blit(dark_stone, (x, y))
 
-                  border_poz.append([x, y])
 
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
