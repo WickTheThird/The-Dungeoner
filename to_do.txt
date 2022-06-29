@@ -1,19 +1,9 @@
 # -------------------------------------------------------------------------
 # Notes3
 
-# add functional screens for each button
-
 # PLAY button
 
-# find the font perfect for the loading screen
-# there is a liitle issue with the stone wall animatijon
-# since we must repose the tabs after switching between the about and levels
-# the about stone slows down
-
 # ABOUT ---- section displays the story of the nomad which i believe to be simple
-
-# in the about section, the events aren't mapped proprely
-# we mus go throuh it again
 
 #LEVELS will be a progress track
 

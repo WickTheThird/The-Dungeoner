@@ -4,10 +4,7 @@ import pygame
 from pygame.locals import *
 from levels.lvl_1.map import *
 from levels.lvl_1.swiches import player_movement
-
-# importing from files
 from map import *
-from swiches import *
 from images_graph import *
 
 def lvl1(play_screen, play_run):
