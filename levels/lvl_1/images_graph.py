@@ -13,6 +13,12 @@ def dark_stone_wall():
 
     return dark_stone_wall
 
+def stone_floor():
+    stone_floor = pygame.image.load("levels/lvl_1/graphics/terrain/stone_tile.png")
+    stone_floor = pygame.transform.scale(stone_floor, (64, 64))
+
+    return stone_floor
+
 # CHARACTERS
 def main_player():
 
