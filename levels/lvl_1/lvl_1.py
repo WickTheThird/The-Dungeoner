@@ -82,7 +82,7 @@ def lvl1(play_screen, play_run):
                 player_init_coords[1] -= block_y_change
 
                 player_dis(play_screen, player_init_coords[0], player_init_coords[1])
-            
+
             elif player_state is False:
 
                 if player_init_coords[0] > 400 or player_init_coords[0] < 100:
@@ -90,7 +90,7 @@ def lvl1(play_screen, play_run):
 
                 else:
                     player_init_coords[0] += player_x_change
-                
+
                 if player_init_coords[1] < 100 or player_init_coords[1] > 700:
                     player_init_coords[1] += 0
 
