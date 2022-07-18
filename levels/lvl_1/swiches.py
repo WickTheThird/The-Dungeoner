@@ -45,33 +45,33 @@ def map_movement(keys):
      # The A Key and other related
     
     if keys[pygame.K_a] and not (keys[pygame.K_w] or keys[pygame.K_s]):
-        return [-13, 0]
+        return [-15, 0]
     
     elif keys[pygame.K_a] and keys[pygame.K_w]:
-        return [-12, -12]
+        return [-14, -14]
 
     elif keys[pygame.K_a] and keys[pygame.K_s]:
-        return [-12, 12]
+        return [-14, 14]
 
     # The D key and other related
     
     if keys[pygame.K_d] and not (keys[pygame.K_w] or keys[pygame.K_s]):
-        return [13, 0]
+        return [15, 0]
     
     elif keys[pygame.K_d] and keys[pygame.K_w]:
-        return [12, -12]
+        return [14, -14]
 
     elif keys[pygame.K_d] and keys[pygame.K_s]:
-        return [12, 12]
+        return [14, 14]
 
     # Up
 
     if keys[pygame.K_w] and not (keys[pygame.K_a] or keys[pygame.K_d]):
-        return [0, -13]
+        return [0, -15]
 
     # Down
 
     if keys[pygame.K_s] and not (keys[pygame.K_a] or keys[pygame.K_d]):
-        return [0, 13]
+        return [0, 15]
 
     return [0, 0]

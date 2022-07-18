@@ -41,7 +41,7 @@ WORLD_MAP_L1 = [
     ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
 ]
 
-# generating the map
+# generating the map -------------------------------------
 
 blocks_coords = []
 blocks_col_dec = []
@@ -85,18 +85,16 @@ def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
                   return [x, y]
 
-#player
+#player -----------------------------------------------
 
 def player_dis(screen, x, y):
     player = main_player()
 
     screen.blit(player, (x, y))
 
-# blocks
+# blocks ----------------------------------------------
 
-def border_lim(screen, poz, player_poz, block_poz):
-    dark_stone = dark_stone_wall()
-    stone_floor_tile = stone_floor()
+def border_lim(poz, player_poz, block_poz):
 
     state = False
 
@@ -106,10 +104,17 @@ def border_lim(screen, poz, player_poz, block_poz):
         if collide and x[0] == 'B':
             state  = True
 
+    return state
+
+def map_around(screen, poz):
+
+    dark_stone = dark_stone_wall()
+    stone_floor_tile = stone_floor()
+
+    for x in poz:
+
         if x[0] == 'B':
             screen.blit(dark_stone, (x[1], x[2]))
 
         elif x[0] == 'F':
             screen.blit(stone_floor_tile, (x[1], x[2]))
-        
-    return state
