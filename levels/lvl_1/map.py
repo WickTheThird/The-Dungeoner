@@ -1,7 +1,4 @@
 # This is the map for LVL1
-
-from tkinter.tix import Tree
-from zmq import FD
 from levels.lvl_1.images_graph import *
 
 #tile size
@@ -17,22 +14,35 @@ WORLD_MAP_L1 = [
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "P", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "B", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "B", "B", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "T", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "B", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "B", "B", "B", "F", "F", "F", "F", "F", "F", "F", "B", "B", "B", "B", "B", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "B", "B", "B", "B", "B", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
@@ -52,6 +62,7 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
     dark_stone = dark_stone_wall()
     stone_floor_tile = stone_floor()
+    oak_tree = tree_1()
 
     for row_index, row in enumerate(WORLD_MAP):
            for col_index, col in enumerate(row):
@@ -70,7 +81,12 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
                    screen.blit(stone_floor_tile, (x, y))
 
+               if col == 'T':
+                   blocks_coords.append(['T', x, y])
 
+                   screen.blit(oak_tree, (x, y))
+
+# --- this is used to catch the initial coords of the player ---
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
     player = main_player()
@@ -101,7 +117,7 @@ def border_lim(poz, player_poz, block_poz):
     for i, x in enumerate(poz):
         collide = pygame.Rect.colliderect(player_poz, block_poz[i])
 
-        if collide and x[0] == 'B':
+        if collide and (x[0] == 'B' or x[0] == 'T'):
             state  = True
 
     return state
@@ -110,6 +126,7 @@ def map_around(screen, poz):
 
     dark_stone = dark_stone_wall()
     stone_floor_tile = stone_floor()
+    oak_tree = tree_1()
 
     for x in poz:
 
@@ -118,3 +135,6 @@ def map_around(screen, poz):
 
         elif x[0] == 'F':
             screen.blit(stone_floor_tile, (x[1], x[2]))
+        
+        elif x[0] == 'T':
+            screen.blit(oak_tree, (x[1], x[2]))
