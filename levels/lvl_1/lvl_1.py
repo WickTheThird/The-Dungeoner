@@ -16,9 +16,6 @@ def lvl1(play_screen, play_run):
     # positioning
     player_init_coords = [0, 0]
 
-    player_x_change = 0
-    player_y_change = 0
-
     # colors and other text things
 
     blue = (0, 0, 255)
@@ -39,12 +36,10 @@ def lvl1(play_screen, play_run):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-            
+
             # the movements of the character
 
             change_stat = movement(keys)
-            player_x_change = change_stat[0]
-            player_y_change = change_stat[1]
             player_mov = change_stat[2]
 
             # the movements of the blocks
@@ -58,15 +53,9 @@ def lvl1(play_screen, play_run):
         if player_mov is False:
 
             player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
-
             stone_block_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1, 0, 0)
 
         else:
-
-            # player limits and other
-
-            player_init_coords[0] += player_x_change
-            player_init_coords[1] += player_y_change
 
             player_border_col = pygame.Rect(player_init_coords[0], player_init_coords[1], 64, 64)
 
@@ -83,11 +72,13 @@ def lvl1(play_screen, play_run):
             state = border_lim(blocks_coords, player_border_col, blocks_col_dec)
 
             if state is False:
-                map_around(play_screen, blocks_coords)
+
+                map_around_floor(play_screen, blocks_coords)
                 player_dis(play_screen, player_init_coords[0], player_init_coords[1])
+                map_around(play_screen, blocks_coords)
 
             elif state is True:
-                
+
                 i = 0
                 while i < len(blocks_coords):
 
@@ -97,12 +88,9 @@ def lvl1(play_screen, play_run):
                     blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
 
                     i += 1
-    
-                player_init_coords[0] -= player_x_change
-                player_init_coords[1] -= player_y_change
 
-                map_around(play_screen, blocks_coords)
+                map_around_floor(play_screen, blocks_coords)
                 player_dis(play_screen, player_init_coords[0], player_init_coords[1])
-            
+                map_around(play_screen, blocks_coords)
 
         pygame.display.update()
