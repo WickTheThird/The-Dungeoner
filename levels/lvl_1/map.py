@@ -4,6 +4,7 @@ from levels.lvl_1.images_graph import *
 #tile size
 
 TILESIZE_L1 = 64
+TREE_TILESIZE = 32
 
 #the map
 
@@ -16,7 +17,7 @@ WORLD_MAP_L1 = [
     ["B", "F", "F", "F", "F", "F", "F", "F", "P", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
-    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "T", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
+    ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
     ["B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "B"],
@@ -54,19 +55,17 @@ WORLD_MAP_L1 = [
 # colours
 
 blue = (0, 0, 255)
+black = (0,0,0)
 
 # generating the map -------------------------------------
 
 blocks_coords = []
 blocks_col_dec = []
 
-black = (0,0,0)
-
 def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
     dark_stone = dark_stone_wall()
     stone_floor_tile = stone_floor()
-    oak_tree = tree_1()
 
     for row_index, row in enumerate(WORLD_MAP):
            for col_index, col in enumerate(row):
@@ -84,12 +83,6 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
                    blocks_coords.append(['F', x, y])
 
                    screen.blit(stone_floor_tile, (x, y))
-
-               if col == 'T':
-                   blocks_coords.append(['T', x, y])
-
-                   screen.blit(stone_floor_tile, (x, y))
-                   screen.blit(oak_tree, (x, y))
 
 # --- this is used to catch the initial coords of the player ---
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
@@ -120,6 +113,7 @@ def border_lim(poz, player_poz, block_poz):
     state = False
 
     for i, x in enumerate(poz):
+
         collide = pygame.Rect.colliderect(player_poz, block_poz[i])
 
         if collide and (x[0] == 'B'):
@@ -137,11 +131,6 @@ def map_around(screen, poz):
 
         if x[0] == 'B':
             screen.blit(dark_stone, (x[1], x[2]))
-
-        elif x[0] == 'T':
-
-            screen.blit(stone_floor_tile, (x[1], x[2]))
-            screen.blit(oak_tree, (x[1], x[2]))
 
 def map_around_floor(screen, poz):
 

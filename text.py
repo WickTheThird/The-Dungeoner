@@ -17,30 +17,42 @@ cyan = (0,255,255)
 dark_blue = (28, 0, 209)
 black = (0,0,0)
 
+dark_green = (0, 10, 0)
+swamp_yellow = (99, 86, 65)
+
+# __init__ color
+
+start_color = swamp_yellow
+about_color = swamp_yellow
+levels_color = swamp_yellow
+quit_color = swamp_yellow
+
 # fonts
 
 font = pygame.font.Font('freesansbold.ttf', 32)
 font_play = pygame.font.Font('freesansbold.ttf', 100)
 font_start_p = pygame.font.Font('freesansbold.ttf', 80)
 
+font_title = pygame.font.Font('freesansbold.ttf', 224)
+
 # text
-play = font.render("Start",  False, blue)
-about = font.render("About", False, blue)
-levels = font.render("Levels", False, blue)
-exit = font.render("Quit", False, blue)
+play = font.render("Start",  False, start_color)
+about = font.render("About", False, about_color)
+levels = font.render("Levels", False, levels_color)
+exit = font.render("Quit", False, quit_color)
 
 # text position
-play_x = 0
-play_y = 210
+play_x = 210
+play_y = 370
 
-about_x = 0
-about_y = 310
+about_x = 205
+about_y = 440
 
-levels_x = 0
-levels_y = 410
+levels_x = 200
+levels_y = 510
 
-exit_x = 0
-exit_y = 510
+exit_x = 215
+exit_y = 580
 
 lvl_x = 420
 lvl_y = 200

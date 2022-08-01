@@ -30,6 +30,6 @@ def main_player():
 def tree_1():
 
     tree = pygame.image.load('levels/lvl_1/graphics/terrain/tree.png').convert_alpha()
-    tree = pygame.transform.scale(tree, (256, 256))
+    tree = pygame.transform.scale(tree, (64, 32))
 
     return tree

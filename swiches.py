@@ -10,10 +10,10 @@ pygame.init()
 
 # block timing
 
-play_block = False
-about_block = False
-level_block = False
-exit_block = False
+play_block = True
+about_block = True
+level_block = True
+exit_block = True
 
 # display status --> Boxes/Shapes
 
