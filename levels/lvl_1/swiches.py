@@ -75,3 +75,5 @@ def map_movement(keys):
         return [0, 20]
 
     return [0, 0]
+
+# note that the enemy movement will be different and thus it will have a different file on its own

@@ -5,8 +5,6 @@
 import pygame
 from pygame.locals import *
 
-from resource_path import resource_path
-
 pygame.init()
 
 # colors used

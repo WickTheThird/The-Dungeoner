@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# library stuff
-
+# stuff
 import pygame
 from pygame.locals import *
 
 # files import
-from map import *
 from text import *
 from swiches import *
 from images_graph import *
@@ -18,7 +15,7 @@ screen = pygame.display.set_mode((1158, 775))
 play_screen = pygame.display.set_mode((1158, 775))
 
 #title
-pygame.display.set_caption("Nomad")
+pygame.display.set_caption("---")
 
 #icon
 pygame.display.set_icon(icon)
@@ -54,31 +51,29 @@ while run:
     screen.blit(scroll_dir, (100, 310))
 
     # title (on screen)
-
-    title_screen = font_title.render('NOMAD', False, dark_green)
+    title_screen = font_title.render('', False, dark_green)
 
     # the meniu
 
-    # displaying the box and placing the texts
-    if over_button is True:
-        screen.blit(play, (play_x, play_y))
-        screen.blit(about, (about_x, about_y))
-        screen.blit(levels, (levels_x, levels_y))
-        screen.blit(exit, (exit_x, exit_y))
-        screen.blit(title_screen, (150, 20))
+    # TEXT and BOX
+    screen.blit(play, (play_x, play_y))
+    screen.blit(about, (about_x, about_y))
+    screen.blit(levels, (levels_x, levels_y))
+    screen.blit(exit, (exit_x, exit_y))
+    screen.blit(title_screen, (150, 20))
 
     if play_block is True and play_dis is True:
-        play_button = pygame.Rect((52, 360, 200, 50))
+        play_button = pygame.Rect((152, 360, 200, 50))
 
     if about_block is True and about_dis is True:
-        about_button = pygame.Rect((55, 430, 200, 50))
+        about_button = pygame.Rect((155, 430, 200, 50))
 
     if level_block is True and levels_dis is True:
-        level_button = pygame.Rect((50, 500, 200, 50))
+        level_button = pygame.Rect((150, 500, 200, 50))
    
 
     if exit_block is True and exit_dis is True:
-        exit_button = pygame.Rect((53, 570, 200, 50))
+        exit_button = pygame.Rect((153, 570, 200, 50))
 
     #events
     for event in pygame.event.get():
@@ -103,22 +98,22 @@ while run:
             if about_button.collidepoint(mouse_pos):
 
                 about_color = dark_green
-                about = font.render("About",  False, about_color)
+                about = font.render("Levels",  False, about_color)
 
             else:
 
                 about_color = swamp_yellow
-                about = font.render("About",  False, about_color)
+                about = font.render("Levels",  False, about_color)
             
             if level_button.collidepoint(mouse_pos):
 
                 level_color = dark_green
-                levels = font.render("Levels",  False, level_color)
+                levels = font.render("About",  False, level_color)
 
             else:
 
                 level_color = swamp_yellow
-                levels = font.render("Levels",  False, level_color)
+                levels = font.render("About",  False, level_color)
             
             if exit_button.collidepoint(mouse_pos):
 
@@ -154,14 +149,12 @@ while run:
                     exit_dis = False
                     levels_dis = False
 
-                    title_dis = False
-                    spaceman_dis = False
-
                     # now we must do the block animation
                     stone_load = True
 
                     #start stuff
-                    start_button_p = True
+                    play_run = True
+                    run = False
 
                 elif about_button.collidepoint(mouse_pos):
                     print("The About button has been pushed!")
@@ -174,10 +167,6 @@ while run:
                     about_dis = False
                     exit_dis = False
                     levels_dis = False
-
-                    # the main page animations
-                    spaceman_dis = False
-                    title_dis = False
 
                     # animation enabled
                     about_stone = True
@@ -197,10 +186,6 @@ while run:
                     levels_dis = False
                     exit_dis = False
 
-                    # the main page animations
-                    spaceman_dis = False
-                    title_dis = False
-
                     # animation enabled ``
                     book_load = True
 
@@ -219,18 +204,11 @@ while run:
                    # reapearing text
                    over_button = True
 
-                   # reapeaaring main animations on the main page
-                   title_dis = True
-                   spaceman_dis = True
-
                    # reapearing boxes
                    play_dis = True
                    about_dis = True
                    levels_dis = True
                    exit_dis = True
-
-                   #color
-                   about = font.render("About", False, dark_green)
 
                 
                 elif back_dis.collidepoint(mouse_pos) and back_arrow is True and book_load is True:
@@ -245,16 +223,8 @@ while run:
                     levels_dis = True
                     exit_dis = True
 
-                    # reapeaaring main animations on the main page
-                    title_dis = True
-                    spaceman_dis = True
-
-                    # text and color/
-                    levels = font.render("Levels", False, dark_green)
-
                 if start_p_dis.collidepoint(mouse_pos) and stone_wall_x >= 0:
                     play_run = True
-
             except:
                 pass
 
@@ -320,24 +290,15 @@ while run:
         screen.blit(book_shelf, (book_load_x, 0))
 
     # END OF THE MENU
-    # start of PLAY run
-    if stone_load is True and stone_wall_x == 0:
-        screen.blit(lvl_nr, (lvl_x, lvl_y))
-        screen.blit(start_p, (start_p_x, start_p_y))
-        pygame.draw.rect(screen, dark_green, pygame.Rect(420, 450, 350, 100), 2)
-
-        start_button_p = True
-
+    # start of PLAY rund
     if play_run is True:
         lvl_1(play_screen, play_run)
 
     pygame.display.update()
 
-
-
 # Notes
 
 # The level's section needs redesign...But we can only do it on a tablet...we shall rquire a map (that I have in mind) -- multiple of these --
-#           in order to compensate for each level...foe now if we just do a schech would be fine
+#                        in order to compensate for each level...foe now if we just do a schech would be fine
 # In the About section, we need to add 2 things -- controls -- story ark/a log of the beasts you have met up until now (that would be cool)
 #
