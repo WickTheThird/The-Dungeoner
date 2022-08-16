@@ -62,7 +62,7 @@ def upward_right_wall():
 def upward_wall():
 
     tile = pygame.image.load('levels/lvl_1/graphics/terrain/stones/continous_wall_purple_tile.png').convert_alpha()
-    tile - pygame.transform.scale(tile, (64, 64))
+    tile = pygame.transform.scale(tile, (64, 64))
 
     return tile
 
@@ -70,7 +70,7 @@ def upward_wall():
 
 def bottom_view_light_tile():
 
-    tile = pygame.image.load('levels/lvl_1/graphics/terrain/stones/bottom_right_purple_tile.png').convert_alpha()
+    tile = pygame.image.load('levels/lvl_1/graphics/terrain/stones/bottom_view_tile.png').convert_alpha()
     tile = pygame.transform.scale(tile, (64, 64))
 
     return tile

@@ -1,4 +1,5 @@
 # This is the map for LVL1
+
 from levels.lvl_1.images_graph import *
 
 #tile size
@@ -9,60 +10,63 @@ TREE_TILESIZE = 32
 #the map
 
 WORLD_MAP_L1 = [
-    ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", "P", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "B"],
-    ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+    ["LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV",  "LTV", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",   "LTV", "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",    "P", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "PFT",   "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT", "LTV"],
+    ["LTV",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT", "LTV"],
+    ["LTV",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT", "LTV"],
+    ["LTV",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT",  "PFT", "LTV"],
+    ["LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT",  "LTV",  "LTV", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT",  "LBV",  "LBV", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV", "LBV"],
 ]
 
 # colours
@@ -91,6 +95,8 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
     # BORDERS -- COSTUM BLOCKS
     dark_stone = dark_stone_wall()
+    light_tile_tv = top_view_light_tile()
+    light_tile_bv = bottom_view_light_tile()
 
     # BORDERS - SET
 
@@ -102,7 +108,7 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
     upward_wall_ = upward_wall()
     upward_left_wall_ = upward_left_wall()
-    uoward_right_wall_ = upward_right_wall()
+    upward_right_wall_ = upward_right_wall()
     upsidedown_wall = upside_down_wall()
 
     for row_index, row in enumerate(WORLD_MAP):
@@ -112,23 +118,104 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
                blocks_col_dec.append(pygame.Rect(x, y, 64, 64))
 
+               # FLOOR TILES
+
                if col == 'B':
                   blocks_coords.append(['B', x, y])
                   respawn_point.append(['B', x, y])
 
                   screen.blit(dark_stone, (x, y))
 
-               if col == 'F' or col == 'P':
+               if col == 'F':
                    blocks_coords.append(['F', x, y])
                    respawn_point.append(['F', x, y])
 
                    screen.blit(stone_floor_tile, (x, y))
+                
+               if col == 'PFT':
+                   blocks_coords.append(['PFT', x, y])
+                   respawn_point.append(['PFT', x, y])
+
+                   screen.blit(purple_floor_tile, (x, y))
+               
+               if col == 'CPFT' or col == 'P':
+                   blocks_coords.append(['CPFT', x, y])
+                   respawn_point.append(['CPFT', x, y])
+
+                   screen.blit(clean_purple_floor_tile, (x, y))
+                
+               # BORDER #2
+
+               if col == 'LTV':
+                   blocks_coords.append(['LTV', x, y])
+                   respawn_point.append(['LTV', x, y])
+
+                   screen.blit(light_tile_tv, (x, y))
+                
+               if col == 'LBV':
+                   blocks_coords.append(['LBV', x, y])
+                   respawn_point.append(['LBV', x, y])
+
+                   screen.blit(light_tile_bv, (x, y))
+               
+               # LIQUIDS -- TERRAIN
                
                if col == 'L':
                    blocks_coords.append(['L', x, y])
                    respawn_point.append(['L', x, y])
 
                    screen.blit(lava_floor_tile, (x, y))
+               
+               # BORDERS - SET -- ALL OF THESE ARE BORDERS, THUS COLLISION
+
+               if col == 'TRC':
+                   blocks_coords.append(['TRC', x, y])
+                   respawn_point.append(['TRC', x, y])
+
+                   screen.blit(top_right_c, (x, y))
+
+               if col == 'BRC':
+                   blocks_coords.append(['BRC', x, y])
+                   respawn_point.append(['BRC', x, y])
+
+                   screen.blit(bottom_right_c, (x, y))
+                
+               if col == 'TLC':
+                   blocks_coords.append(['TLC', x, y])
+                   respawn_point.append(['TLC', x, y])
+
+                   screen.blit(top_left_c, (x, y))
+               
+               if col == 'BLC':
+                   blocks_coords.append(['BLC', x, y])
+                   respawn_point.append(['BLC', x, y])
+
+                   screen.blit(bottom_left_c, (x, y))
+               
+               if col == 'UW':
+                   blocks_coords.append(['UW', x, y])
+                   respawn_point.append(['UW', x, y])
+
+                   screen.blit(upward_wall_, (x, y))
+                
+               if col == 'ULW':
+                   blocks_coords.append(['ULW', x, y])
+                   respawn_point.append(['ULW', x, y])
+
+                   screen.blit(upward_left_wall_, (x, y))
+               
+               if col == 'URW':
+                   blocks_coords.append(['URW', x, y])
+                   respawn_point.append(['URW', x, y])
+
+                   screen.blit(upward_right_wall_, (x, y))
+               
+               if col == 'DW':
+                   blocks_coords.append(['DW', x, y])
+                   respawn_point.append(['DW', x, y])
+
+                   screen.blit(upsidedown_wall, (x, y))
+
 
 # --- this is used to catch the initial coords of the player ---
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
@@ -164,24 +251,110 @@ def border_lim(poz, player_poz, block_poz):
 
         if collide and (x[0] == 'B'):
             state  = True
+        
+         # BORDERS - SET -- ALL OF THESE ARE BORDERS, THUS COLLISION
+
+        if x[0] == 'TRC' and collide:
+            state  = True
+
+        if x[0] == 'BRC' and collide:
+            state  = True
+        
+        if x[0] == 'TLC' and collide:
+            state  = True
+        
+        if x[0] == 'BLC' and collide:
+            state  = True
+        
+        if x[0] == 'UW' and collide:
+            state  = True
+
+        if x[0] == 'ULW' and collide:
+            state  = True
+        
+        if x[0] == 'URW' and collide:
+            state  = True
+        
+        if x[0] == 'DW' and collide:
+            state  = True
+
+        # WALLS #2
+        
+        if collide and (x[0] == 'LBV' or x[0] == 'LTV'):
+            state = True
 
     return state
 
 def map_around(screen, poz):
 
+    
+    # BORDERS - SET
+
+    top_right_c = top_right_corner()
+    bottom_right_c = bottom_right_corner()
+
+    top_left_c = top_left_corner()
+    bottom_left_c = bottom_left_corner()
+
+    upward_wall_ = upward_wall()
+    upward_left_wall_ = upward_left_wall()
+    upward_right_wall_ = upward_right_wall()
+    upsidedown_wall = upside_down_wall()
+
+    # WALLS #2
+
+    light_tile_tv = top_view_light_tile()
+    light_tile_bv = bottom_view_light_tile()
     dark_stone = dark_stone_wall()
-    stone_floor_tile = stone_floor()
-    oak_tree = tree_1()
 
     for x in poz:
 
         if x[0] == 'B':
             screen.blit(dark_stone, (x[1], x[2]))
+        
+         # BORDERS - SET -- ALL OF THESE ARE BORDERS, THUS COLLISION
+
+        if x[0] == 'TRC':
+            screen.blit(top_right_c, (x[1], x[2]))
+
+        if x[0] == 'BRC':
+            screen.blit(bottom_right_c, (x[1], x[2]))
+        
+        if x[0] == 'TLC':
+            screen.blit(top_left_c, (x[1], x[2]))
+        
+        if x[0] == 'BLC':
+            screen.blit(bottom_left_c, (x[1], x[2]))
+        
+        if x[0] == 'UW':
+            screen.blit(upward_wall_, (x[1], x[2]))
+        
+        if x[0] == 'ULW':
+            screen.blit(upward_left_wall_, (x[1], x[2]))
+        
+        if x[0] == 'URW':
+            screen.blit(upward_right_wall_, (x[1], x[2]))
+        
+        if x[0] == 'DW':
+            screen.blit(upsidedown_wall, (x[1], x[2]))
+        
+        # WALLS #2
+
+        if x[0] == 'LTV':
+            screen.blit(light_tile_tv, (x[1], x[2]))
+        
+        if x[0] == 'LBV':
+            screen.blit(light_tile_bv, (x[1], x[2]))
 
 def map_around_floor(screen, poz):
 
-    stone_floor_tile = stone_floor()
+    # LIQ Tiles
     lava_floor_tile = lava_floor_1()
+
+    # Floor Tiles
+    clean_purple_floor_tile = clean_purple()
+    stone_floor_tile = stone_floor()
+    purple_floor_tile = purple_tile()
 
     for x in poz:
 
@@ -190,6 +363,13 @@ def map_around_floor(screen, poz):
         
         if x[0] == 'L':
             screen.blit(lava_floor_tile, (x[1], x[2]))
+        
+        if x[0] == 'CPFT':
+            screen.blit(clean_purple_floor_tile, (x[1], x[2]))
+        
+        if x[0] == 'PFT':
+            screen.blit(purple_floor_tile, (x[1], x[2]))
+
 
 # Health reduction collision dec
 
