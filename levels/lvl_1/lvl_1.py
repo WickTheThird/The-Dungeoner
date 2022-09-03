@@ -10,217 +10,6 @@ from levels.lvl_1.images_graph import *
 
 # from parent directory (recreated in current directory)
 from levels.lvl_1.images_graph_al import *
-from levels.lvl_1.swiches_al import *
-from levels.lvl_1.text_al import *
-
-# main game/level
-def lvl1(play_screen, play_run):
-
-    # movement change
-
-    player_mov = False
-
-    # positioning
-
-    player_init_coords = [0, 0]
-
-    # colors and other text things
-
-    blue = (0, 0, 255)
-    red = (255, 0, 0)
-
-    font = pygame.font.Font('freesansbold.ttf', 32)
-
-    # technical stuff
-
-    hp = '100'
-    sh = '10'
-
-    # Map Movement influence
-
-    lava_dm_state = False
-    moving_map = True
-
-    block_x_change = 0
-    block_y_change = 0
-
-    # main loop
-
-    while play_run:
-        play_screen.fill((23,23,23))
-
-        # displaying text
-
-        hearts = font.render(f'Hearts: {hp}', False, blue)
-        sheild = font.render(f'Sheild: {sh}', False, blue)
-
-        yes = font.render('Yes', False, blue)
-        no = font.render('No', False, red)
-        respawn_q = font.render('Respawn:', False, blue)
-
-        # Boxes
-
-        yes_b = pygame.Rect(1000, 30, 128, 32)
-        no_b = pygame.Rect(800, 30, 128, 32)
-
-        for event in pygame.event.get():
-
-            # __init__ events
-
-            keys = pygame.key.get_pressed()
-
-            # the events
-
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-
-            # the movements of the character
-
-            change_stat = movement(keys)
-            player_mov = change_stat[2]
-
-            # the movements of the blocks
-
-            if moving_map is True:
-
-                block_movement = map_movement(keys)
-                block_x_change = block_movement[0]
-                block_y_change = block_movement[1]
-            else:
-
-                block_x_change = 0
-                block_y_change = 0
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-
-                    mouse_pos = event.pos
-
-                    if yes_b.collidepoint(mouse_pos):
-
-                        moving_map = True
-                        sh = '0'
-                        hp = '50'
-    
-                    if no_b.collidepoint(mouse_pos):
-                        algorythm(play_screen, True)
-
-
-        # displaying the player
-
-        if player_mov is False:
-
-            player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
-            stone_block_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1, 0, 0)
-
-        else:
-
-            player_border_col = pygame.Rect(player_init_coords[0], player_init_coords[1], 64, 64)
-
-            lava_dm_state = lava_dm(blocks_coords, player_border_col, blocks_col_dec)
-            print(lava_dm_state)
-
-            if lava_dm_state is True:
-                i = 0
-                while i < len(blocks_coords):
-
-                    blocks_coords[i][1] -= (block_x_change // 3)
-                    blocks_coords[i][2] -= (block_y_change // 3)
-
-                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
-
-                    i += 1
-            
-            else:
-
-                i = 0
-                while i < len(blocks_coords):
-
-                    blocks_coords[i][1] -= (block_x_change)
-                    blocks_coords[i][2] -= (block_y_change)
-
-                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
-
-                    i += 1
-
-            state = border_lim(blocks_coords, player_border_col, blocks_col_dec)
-
-            if state is False:
-
-                map_around_floor(play_screen, blocks_coords)
-                player_dis(play_screen, player_init_coords[0], player_init_coords[1])
-                map_around(play_screen, blocks_coords)
-
-            elif state is True:
-
-                if lava_dm_state is True:
-                    i = 0
-                    while i < len(blocks_coords):
-
-                        blocks_coords[i][1] += (block_x_change // 3)
-                        blocks_coords[i][2] += (block_y_change // 3)
-
-                        blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
-
-                        i += 1
-                else:
-                    i = 0
-                    while i < len(blocks_coords):
-
-                        blocks_coords[i][1] += (block_x_change)
-                        blocks_coords[i][2] += (block_y_change)
-
-                        blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
-
-                        i += 1
-
-                map_around_floor(play_screen, blocks_coords)
-                player_dis(play_screen, player_init_coords[0], player_init_coords[1])
-                map_around(play_screen, blocks_coords)
-
-        
-        # RESPAWN
-        
-        if lava_dm_state is True:
-
-            new_hp = int(hp) - 1
-
-            hp = str(new_hp)
-
-            if int(hp) <= 0:
-
-                lava_dm_state = False
-                moving_map = False
-
-                i = 0
-                while i < len(blocks_coords):
-
-                    blocks_coords[i][1] = respawn_point[i][1]
-                    blocks_coords[i][2] = respawn_point[i][2]
-
-                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
-
-                    i += 1
-
-                hp = '0'
-
-        # Dispplaying settings
-
-        play_screen.blit(hearts, (20, 20))
-        play_screen.blit(sheild, (20, 60))
-
-        if moving_map is False:
-
-            play_screen.blit(respawn_q, (600, 30))
-
-            pygame.draw.rect(play_screen, blue, pygame.Rect(1000, 30, 128, 32), 1)
-            play_screen.blit(yes, (1040, 30))
-
-            pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
-            play_screen.blit(no, (845, 30))
-
-        pygame.display.update()
-
 
 # The Main Menu
 
@@ -591,3 +380,372 @@ def algorythm(screen, run):
             lvl1(screen, play_run)
 
         pygame.display.update()
+
+
+
+
+# -------------------------------------------- main game/level -----------------------------------------------------------------------
+
+
+
+
+def lvl1(play_screen, play_run):
+
+    # movement change
+
+    player_mov = False
+
+    # positioning
+
+    player_init_coords = [0, 0]
+
+    # colors and other text things
+
+    blue = (0, 0, 255)
+    red = (255, 0, 0)
+
+    font = pygame.font.Font('freesansbold.ttf', 32)
+
+    # technical stuff
+
+    hp = '100'
+    sh = '10'
+
+    # Map Movement influence
+
+    lava_dm_state = False
+    moving_map = True
+
+    block_x_change = 0
+    block_y_change = 0
+
+    movment_history = ['n']
+    idle_state = movment_history[-1]
+
+    character_ind_up = 0
+    character_ind_down = 0
+    character_ind_left = 0
+    character_ind_right = 0
+
+    character_walking_ind = 0
+
+    # frame
+
+    clock = pygame.time.Clock()
+
+    # main loop
+
+    while play_run:
+        play_screen.fill((23,23,23))
+
+        # displaying text
+
+        hearts = font.render(f'Hearts: {hp}', False, blue)
+        sheild = font.render(f'Sheild: {sh}', False, blue)
+
+        yes = font.render('Yes', False, blue)
+        no = font.render('No', False, red)
+        respawn_q = font.render('Respawn:', False, blue)
+
+        # Boxes
+
+        yes_b = pygame.Rect(1000, 30, 128, 32)
+        no_b = pygame.Rect(800, 30, 128, 32)
+
+        for event in pygame.event.get():
+
+            # __init__ events
+
+            keys = pygame.key.get_pressed()
+
+            # the events
+
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            # the movements of the character
+
+            change_stat = movement(keys)
+            player_mov = change_stat[2]
+
+            # frame rate
+
+            clock.tick(20)
+
+            # the movements of the blocks
+
+            if moving_map is True:
+
+                block_movement = map_movement(keys)
+                block_x_change = block_movement[0]
+                block_y_change = block_movement[1]
+                last  =  block_movement[2]
+
+                if last == 'a':
+                    movment_history.append('a')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_left += 1
+
+                    if character_ind_left == 4:
+                        character_ind_left = 0
+
+                    character_walking_ind = character_ind_left
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_right = 0
+
+                elif last == 'aw':
+                    movment_history.append('aw')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_left += 1
+
+                    if character_ind_left == 4:
+                        character_ind_left = 0
+
+                    character_walking_ind = character_ind_left
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_right = 0
+
+                elif last == 'as':
+                    movment_history.append('as')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_left += 1
+
+                    if character_ind_left == 4:
+                        character_ind_left = 0
+
+                    character_walking_ind = character_ind_left
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_right = 0
+
+                elif last == 'd':
+                    movment_history.append('d')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_right += 1
+
+                    if character_ind_right == 4:
+                        character_ind_right = 0
+
+                    character_walking_ind = character_ind_right
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_left = 0
+
+                elif last == 'dw':
+                    movment_history.append('dw')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_right += 1
+
+                    if character_ind_right == 4:
+                        character_ind_right = 0
+
+                    character_walking_ind = character_ind_right
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_left = 0
+
+                elif last == 'ds':
+                    movment_history.append('ds')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_right += 1
+
+                    if character_ind_right == 4:
+                        character_ind_right = 0
+
+                    character_walking_ind = character_ind_right
+
+                    character_ind_up = 0
+                    character_ind_down = 0
+                    character_ind_left = 0
+
+                elif last == 'w':
+                    movment_history.append('w')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_up += 1
+
+                    if character_ind_up == 4:
+                        character_ind_up = 0
+
+                    character_walking_ind = character_ind_up
+
+                    character_ind_down = 0
+                    character_ind_left = 0
+                    character_ind_right = 0
+                
+                elif last == 's':
+                    movment_history.append('s')
+
+                    idle_state = movment_history[-1]
+
+                    character_ind_down += 1
+
+                    if character_ind_down == 4:
+                        character_ind_down = 0
+
+                    character_walking_ind = character_ind_down
+
+                    character_ind_up = 0
+                    character_ind_left = 0
+                    character_ind_right = 0
+
+                elif last == 'n':
+                    print('n')
+                    idle_state = movment_history[-1]
+
+            else:
+
+                block_x_change = 0
+                block_y_change = 0
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+
+                    mouse_pos = event.pos
+
+                    if yes_b.collidepoint(mouse_pos):
+
+                        moving_map = True
+                        sh = '0'
+                        hp = '50'
+    
+                    if no_b.collidepoint(mouse_pos):
+                        algorythm(play_screen, True)
+
+
+        # displaying the player
+
+        if player_mov is False:
+
+            player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
+            stone_block_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1, 0, 0)
+
+        else:
+
+            player_border_col = pygame.Rect(player_init_coords[0], player_init_coords[1], 64, 64)
+
+            lava_dm_state = lava_dm(blocks_coords, player_border_col, blocks_col_dec)
+            #print(lava_dm_state)
+
+            if lava_dm_state is True:
+                i = 0
+                while i < len(blocks_coords):
+
+                    blocks_coords[i][1] -= (block_x_change // 3)
+                    blocks_coords[i][2] -= (block_y_change // 3)
+
+                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
+
+                    i += 1
+            
+            else:
+
+                i = 0
+                while i < len(blocks_coords):
+
+                    blocks_coords[i][1] -= (block_x_change)
+                    blocks_coords[i][2] -= (block_y_change)
+
+                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
+
+                    i += 1
+
+            state = border_lim(blocks_coords, player_border_col, blocks_col_dec)
+
+            if state is False:
+
+                map_around_floor(play_screen, blocks_coords)
+                player_dis(play_screen, player_init_coords[0], player_init_coords[1], idle_state, character_walking_ind)
+                map_around(play_screen, blocks_coords)
+
+            elif state is True:
+
+                if lava_dm_state is True:
+                    i = 0
+                    while i < len(blocks_coords):
+
+                        blocks_coords[i][1] += (block_x_change // 3)
+                        blocks_coords[i][2] += (block_y_change // 3)
+
+                        blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
+
+                        i += 1
+                else:
+                    i = 0
+                    while i < len(blocks_coords):
+
+                        blocks_coords[i][1] += (block_x_change)
+                        blocks_coords[i][2] += (block_y_change)
+
+                        blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
+
+                        i += 1
+
+                map_around_floor(play_screen, blocks_coords)
+                player_dis(play_screen, player_init_coords[0], player_init_coords[1], idle_state, character_walking_ind)
+                map_around(play_screen, blocks_coords)
+
+        
+        # RESPAWN
+        
+        if lava_dm_state is True:
+
+            new_hp = int(hp) - 1
+
+            hp = str(new_hp)
+
+            if int(hp) <= 0:
+
+                lava_dm_state = False
+                moving_map = False
+
+                i = 0
+                while i < len(blocks_coords):
+
+                    blocks_coords[i][1] = respawn_point[i][1]
+                    blocks_coords[i][2] = respawn_point[i][2]
+
+                    blocks_col_dec[i] = pygame.Rect(blocks_coords[i][1], blocks_coords[i][2], 64, 64)
+
+                    i += 1
+
+                hp = '0'
+
+        # Dispplaying settings
+
+        play_screen.blit(hearts, (20, 20))
+        play_screen.blit(sheild, (20, 60))
+
+        if moving_map is False:
+
+            play_screen.blit(respawn_q, (600, 30))
+
+            pygame.draw.rect(play_screen, blue, pygame.Rect(1000, 30, 128, 32), 1)
+            play_screen.blit(yes, (1040, 30))
+
+            pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
+            play_screen.blit(no, (845, 30))
+
+        pygame.display.update()
+
+

@@ -258,3 +258,78 @@ def enemy_0():
     enemy_0 = pygame.image.load('levels/lvl_1/graphics/enemy/0.png').convert_alpha()
 
     return enemy_0
+
+# ANIMATED CHARACTERS
+
+def player_1_down():
+
+    player_0 = pygame.image.load('levels/lvl_1/graphics/character/player/down/down_0.png').convert_alpha()
+    player_1 = pygame.image.load('levels/lvl_1/graphics/character/player/down/down_1.png').convert_alpha()
+    player_2 = pygame.image.load('levels/lvl_1/graphics/character/player/down/down_2.png').convert_alpha()
+    player_3 = pygame.image.load('levels/lvl_1/graphics/character/player/down/down_3.png').convert_alpha()
+
+    player_sprites = [player_0, player_1, player_2, player_3]
+
+    return player_sprites
+
+
+def player_1_down_idle():
+
+    return
+
+
+def player_1_left():
+
+    player_0 = pygame.image.load('levels/lvl_1/graphics/character/player/left/left_0.png').convert_alpha()
+    player_1 = pygame.image.load('levels/lvl_1/graphics/character/player/left/left_1.png').convert_alpha()
+    player_2 = pygame.image.load('levels/lvl_1/graphics/character/player/left/left_2.png').convert_alpha()
+    player_3 = pygame.image.load('levels/lvl_1/graphics/character/player/left/left_3.png').convert_alpha()
+
+    player_sprites = [player_0, player_1, player_2, player_3]
+
+    return player_sprites
+
+
+def player_1_left_idle():
+
+    player_idle = pygame.image.load('levels/lvl_1/graphics/character/player/down_idle/idle_down.png').convert_alpha()
+
+    return player_idle
+
+
+def player_1_right():
+
+    player_0 = pygame.image.load('levels/lvl_1/graphics/character/player/right/right_0.png').convert_alpha()
+    player_1 = pygame.image.load('levels/lvl_1/graphics/character/player/right/right_1.png').convert_alpha()
+    player_2 = pygame.image.load('levels/lvl_1/graphics/character/player/right/right_2.png').convert_alpha()
+    player_3 = pygame.image.load('levels/lvl_1/graphics/character/player/right/right_3.png').convert_alpha()
+
+    player_sprites = [player_0, player_1, player_2, player_3]
+
+    return player_sprites
+
+
+def player_1_right_idle():
+
+    player_idle = pygame.image.load('levels/lvl_1/graphics/character/player/left_idle/idle_left.png').convert_alpha()
+
+    return player_idle
+
+
+def player_1_up():
+
+    player_0 = pygame.image.load('levels/lvl_1/graphics/character/player/up/up_0.png').convert_alpha()
+    player_1 = pygame.image.load('levels/lvl_1/graphics/character/player/up/up_1.png').convert_alpha()
+    player_2 = pygame.image.load('levels/lvl_1/graphics/character/player/up/up_2.png').convert_alpha()
+    player_3 = pygame.image.load('levels/lvl_1/graphics/character/player/up/up_3.png').convert_alpha()
+
+    player_sprites = [player_0, player_1, player_2, player_3]
+
+    return player_sprites
+
+
+def player_1_up_idle():
+
+    player_idle = pygame.image.load('levels/lvl_1/graphics/character/player/up_idle/idle_up.png').convert_alpha()
+
+    return player_idle

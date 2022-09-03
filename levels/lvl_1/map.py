@@ -5,7 +5,6 @@ from levels.lvl_1.images_graph import *
 #tile size
 
 TILESIZE_L1 = 64
-TREE_TILESIZE = 32
 
 #the map
 
@@ -220,7 +219,8 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 # --- this is used to catch the initial coords of the player ---
 def player_init_dis(screen, WORLD_MAP, TILESIZE):
 
-    player = main_player()
+    player1down = player_1_down()
+    player1down = player1down[0]
 
     for row_index, row in enumerate(WORLD_MAP):
            for col_index, col in enumerate(row):
@@ -228,16 +228,55 @@ def player_init_dis(screen, WORLD_MAP, TILESIZE):
                y = row_index * TILESIZE + 38
 
                if col == 'P':
-                  screen.blit(player, (x, y))
+                  screen.blit(player1down, (x, y))
 
                   return [x, y]
 
 # player ----------------------------------------------
 
-def player_dis(screen, x, y):
+def player_dis(screen, x, y, state, ind):
+
+    # old design (the spaceman)
     player = main_player()
 
-    screen.blit(player, (x, y))
+    # new animation (not made by me)
+    player1up = player_1_up()
+    player1down = player_1_down()
+    player1left = player_1_left()
+    player1right = player_1_right()
+
+    #idle states for the new character
+    player1up_idle = player_1_up_idle()
+    player1down_idle = player_1_down_idle()
+    player1left_idle = player_1_left_idle()
+    player1right_idle = player_1_right_idle()
+
+    if state == 'a':
+        screen.blit(player1left[ind], (x, y))
+
+    elif state == 'aw':
+        screen.blit(player1left[ind], (x, y))
+
+    elif state == 'as':
+        screen.blit(player1left[ind], (x, y))
+
+    elif state == 'd':
+        screen.blit(player1right[ind], (x, y))
+
+    elif state == 'dw':
+        screen.blit(player1right[ind], (x, y))
+
+    elif state == 'ds':
+        screen.blit(player1right[ind], (x, y))
+
+    elif state == 'w':
+        screen.blit(player1up[ind], (x, y))
+
+    elif state == 's':
+        screen.blit(player1down[ind], (x, y))
+    
+    elif state == 'n':
+        screen.blit(player1down[0], (x, y))
 
 # blocks ----------------------------------------------
 
@@ -319,7 +358,7 @@ def map_around(screen, poz):
 
         if x[0] == 'BRC':
             screen.blit(bottom_right_c, (x[1], x[2]))
-        
+
         if x[0] == 'TLC':
             screen.blit(top_left_c, (x[1], x[2]))
         
