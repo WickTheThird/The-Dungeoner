@@ -471,7 +471,7 @@ def lvl1(play_screen, play_run):
 
             # frame rate
 
-            clock.tick(20)
+            #clock.tick(20)
 
             # the movements of the blocks
 
