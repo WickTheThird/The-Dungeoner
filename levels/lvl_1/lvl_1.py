@@ -395,6 +395,10 @@ def lvl1(play_screen, play_run):
 
     player_mov = False
 
+    # Inv state
+
+    inv_state = False
+
     # positioning
 
     player_init_coords = [0, 0]
@@ -408,8 +412,10 @@ def lvl1(play_screen, play_run):
 
     # technical stuff
 
+    character_stats = False
+
     hp = '100'
-    sh = '10'
+    sh = '100'
 
     # Map Movement influence
 
@@ -440,8 +446,9 @@ def lvl1(play_screen, play_run):
 
         # displaying text
 
-        hearts = font.render(f'Hearts: {hp}', False, blue)
-        sheild = font.render(f'Sheild: {sh}', False, blue)
+        if character_stats is False:
+            hearts = font.render(f'Hearts: {hp}', False, blue)
+            sheild = font.render(f'Sheild: {sh}', False, blue)
 
         yes = font.render('Yes', False, blue)
         no = font.render('No', False, red)
@@ -459,7 +466,6 @@ def lvl1(play_screen, play_run):
             keys = pygame.key.get_pressed()
 
             # the events
-
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -469,9 +475,13 @@ def lvl1(play_screen, play_run):
             change_stat = movement(keys)
             player_mov = change_stat[2]
 
-            # frame rate
+            # characrer inventory
 
-            #clock.tick(20)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_e and inv_state == False:
+                    inv_state = True
+                elif event.key == pygame.K_e and inv_state == True:
+                    inv_state = False
 
             # the movements of the blocks
 
@@ -480,7 +490,7 @@ def lvl1(play_screen, play_run):
                 block_movement = map_movement(keys)
                 block_x_change = block_movement[0]
                 block_y_change = block_movement[1]
-                last  =  block_movement[2]
+                last = block_movement[2]
 
                 if last == 'a':
                     movment_history.append('a')
@@ -733,8 +743,9 @@ def lvl1(play_screen, play_run):
 
         # Dispplaying settings
 
-        play_screen.blit(hearts, (20, 20))
-        play_screen.blit(sheild, (20, 60))
+        if character_stats is False:
+            play_screen.blit(hearts, (20, 20))
+            play_screen.blit(sheild, (20, 60))
 
         if moving_map is False:
 
@@ -745,7 +756,63 @@ def lvl1(play_screen, play_run):
 
             pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
             play_screen.blit(no, (845, 30))
+        
+        # Inventory
+        if inv_state is True:
+            play_screen.blit(inventory(), (0, 460))
+
+            #player 
+            play_screen.blit(player_1_down_idle(), (854.5, 628))
+
+            # Armor inventory
+            play_screen.blit(inv_slot(), (805, 580))
+            play_screen.blit(inv_slot(), (865, 580))
+            play_screen.blit(inv_slot(), (925, 580))
+            play_screen.blit(inv_slot(), (805, 640))
+            play_screen.blit(inv_slot(), (805, 700))
+            play_screen.blit(inv_slot(), (865, 700))
+            play_screen.blit(inv_slot(), (925, 700))
+            play_screen.blit(inv_slot(), (925, 640))
+
+            # inventory slots
+
+            diff = 40
+            slot_x = 280
+            slot_y = 520
+            for x in range(50):
+
+                i = x
+                if i % 10 == 0:
+                    slot_x = 280
+                    slot_y += diff
+
+                slot_x += diff
+
+                # draw inventory slots
+                play_screen.blit(inv_slot(), (slot_x, slot_y))
+            
+            # Character stats
+            character_stats = True
+
+            if int(hp) < 100:
+
+                # HP RECTANGLE if inv is open and damage take
+                dis_hp = 100 - int(hp)
+                pygame.draw.rect(play_screen, red, pygame.Rect(170, 561, 20, 100 - dis_hp))
+                pygame.draw.rect(play_screen, red, pygame.Rect(170, 561, 20, 100), 1)
+
+                # Sheild Rectangle if inv is open and damage taken
+                disp_sheild = 100 - int(sh)
+                pygame.draw.rect(play_screen, blue, pygame.Rect(230, 561, 20, 100 - disp_sheild))
+                pygame.draw.rect(play_screen, blue, pygame.Rect(230, 561, 20, 100), 1)
+
+            else:
+                # HP RECTANGLE if inv is open and no damage is taken
+                pygame.draw.rect(play_screen, red, pygame.Rect(170, 561, 20, 100))
+
+                # Sheild Rectangle if inv is open and no damage taken
+                pygame.draw.rect(play_screen, blue, pygame.Rect(230, 561, 20, 100))
+        else:
+            character_stats = False
 
         pygame.display.update()
-
-

@@ -275,7 +275,9 @@ def player_1_down():
 
 def player_1_down_idle():
 
-    return
+    down_idle = pygame.image.load('levels/lvl_1/graphics/character/player/down_idle/idle_down.png').convert_alpha()
+
+    return down_idle
 
 
 def player_1_left():
@@ -333,3 +335,19 @@ def player_1_up_idle():
     player_idle = pygame.image.load('levels/lvl_1/graphics/character/player/up_idle/idle_up.png').convert_alpha()
 
     return player_idle
+
+# THE INVENTORY
+
+def inventory():
+
+    inventory = pygame.image.load('levels/lvl_1/graphics/dirs/inventory.png').convert_alpha()
+    inventory  = pygame.transform.scale(inventory, (1160, 400))
+
+    return inventory
+
+def inv_slot():
+
+    inv_slot = pygame.image.load('levels/lvl_1/graphics/dirs/inv_slot.png').convert_alpha()
+    inv_slot  = pygame.transform.scale(inv_slot, (40, 40))
+
+    return inv_slot
