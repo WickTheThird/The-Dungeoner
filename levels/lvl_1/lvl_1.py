@@ -439,6 +439,11 @@ def lvl1(play_screen, play_run):
 
     clock = pygame.time.Clock()
 
+    # cursor
+
+
+    pygame.mouse.set_cursor(pygame.cursors.diamond)
+
     # main loop
 
     while play_run:
@@ -756,8 +761,9 @@ def lvl1(play_screen, play_run):
 
             pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
             play_screen.blit(no, (845, 30))
-        
-        # Inventory
+
+        #  ------ ------ ------ ----- ----- ------ ------- ------- ------- Inventory ------- -- ----- -------------------------------- --------------------------------
+
         if inv_state is True:
             play_screen.blit(inventory(), (0, 460))
 
@@ -812,6 +818,15 @@ def lvl1(play_screen, play_run):
 
                 # Sheild Rectangle if inv is open and no damage taken
                 pygame.draw.rect(play_screen, blue, pygame.Rect(230, 561, 20, 100))
+            
+            # Sheild and Heart icon
+
+            heart_disp = heart_icon()
+            sheild_disp = sheild_icon()
+
+            play_screen.blit(heart_disp, (163, 665))
+            play_screen.blit(sheild_disp, (220, 664))
+
         else:
             character_stats = False
 

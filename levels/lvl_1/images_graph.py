@@ -351,3 +351,17 @@ def inv_slot():
     inv_slot  = pygame.transform.scale(inv_slot, (40, 40))
 
     return inv_slot
+
+def heart_icon():
+
+    heart_icon = pygame.image.load("levels/lvl_1/graphics/dirs/heart_icon.png").convert_alpha()
+    heart_icon = pygame.transform.scale(heart_icon, (32, 32))
+
+    return heart_icon
+
+def sheild_icon():
+
+    sheild_icon = pygame.image.load("levels/lvl_1/graphics/dirs/sheild_icon.png").convert_alpha()
+    sheild_icon = pygame.transform.scale(sheild_icon, (40, 40))
+
+    return sheild_icon
