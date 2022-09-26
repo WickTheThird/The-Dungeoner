@@ -796,7 +796,7 @@ def lvl1(play_screen, play_run):
 
                 # draw inventory slots
                 play_screen.blit(inv_slot(), (slot_x, slot_y))
-            
+
             # Character stats
             character_stats = True
 
@@ -818,7 +818,7 @@ def lvl1(play_screen, play_run):
 
                 # Sheild Rectangle if inv is open and no damage taken
                 pygame.draw.rect(play_screen, blue, pygame.Rect(230, 561, 20, 100))
-            
+
             # Sheild and Heart icon
 
             heart_disp = heart_icon()
