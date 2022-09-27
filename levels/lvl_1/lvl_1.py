@@ -1,5 +1,6 @@
 # this is the first level, this tha basis of eeryhing
 
+import os
 import pygame
 from pygame.locals import *
 
@@ -399,6 +400,10 @@ def lvl1(play_screen, play_run):
 
     inv_state = False
 
+    # Chest Inventory
+
+    show_chest_inv = False
+
     # positioning
 
     player_init_coords = [0, 0]
@@ -440,7 +445,6 @@ def lvl1(play_screen, play_run):
     clock = pygame.time.Clock()
 
     # cursor
-
 
     pygame.mouse.set_cursor(pygame.cursors.diamond)
 
@@ -487,6 +491,18 @@ def lvl1(play_screen, play_run):
                     inv_state = True
                 elif event.key == pygame.K_e and inv_state == True:
                     inv_state = False
+            
+            # Mouse Collision
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+
+                mouse_col = pygame.Rect(mouse_pos[0], mouse_pos[1], 16, 16)
+
+                chest_id = open_chest_mouse(blocks_coords, mouse_col, blocks_col_dec, the_chests)
+
+                show_chest_inv = chest_id[0]
+                #which_chest = (chest_id[1][0], chest_id[1][1])
 
             # the movements of the blocks
 
@@ -626,7 +642,6 @@ def lvl1(play_screen, play_run):
                     character_ind_right = 0
 
                 elif last == 'n':
-                    print('n')
                     idle_state = movment_history[-1]
 
             else:
@@ -652,12 +667,12 @@ def lvl1(play_screen, play_run):
 
         if player_mov is False:
 
-            player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
             stone_block_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1, 0, 0)
+            player_init_coords = player_init_dis(play_screen, WORLD_MAP_L1, TILESIZE_L1)
 
         else:
 
-            player_border_col = pygame.Rect(player_init_coords[0], player_init_coords[1], 64, 64)
+            player_border_col = pygame.Rect(player_init_coords[0] + 17, player_init_coords[1] + 20, 32, 32)
 
             lava_dm_state = lava_dm(blocks_coords, player_border_col, blocks_col_dec)
             #print(lava_dm_state)
@@ -719,6 +734,8 @@ def lvl1(play_screen, play_run):
                 map_around_floor(play_screen, blocks_coords)
                 player_dis(play_screen, player_init_coords[0], player_init_coords[1], idle_state, character_walking_ind)
                 map_around(play_screen, blocks_coords)
+            
+            #pygame.draw.rect(play_screen, blue, player_border_col)
 
         
         # RESPAWN
@@ -761,6 +778,16 @@ def lvl1(play_screen, play_run):
 
             pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
             play_screen.blit(no, (845, 30))
+
+        
+        # Adding Chests...
+
+        if show_chest_inv is True:
+
+            #print("Chest nr " + the_chests[which_chest] + " was opened.")
+
+            pass
+
 
         #  ------ ------ ------ ----- ----- ------ ------- ------- ------- Inventory ------- -- ----- -------------------------------- --------------------------------
 

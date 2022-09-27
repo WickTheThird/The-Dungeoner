@@ -345,6 +345,13 @@ def inventory():
 
     return inventory
 
+def chest_inventory():
+
+    inventory = pygame.image.load('levels/lvl_1/graphics/dirs/inventory.png').convert_alpha()
+    inventory = pygame.transform.scale(inventory, (860, 400))
+
+    return inventory
+
 def inv_slot():
 
     inv_slot = pygame.image.load('levels/lvl_1/graphics/dirs/inv_slot.png').convert_alpha()
@@ -365,3 +372,38 @@ def sheild_icon():
     sheild_icon = pygame.transform.scale(sheild_icon, (40, 40))
 
     return sheild_icon
+
+
+# Blocks
+
+# Chests
+
+def wooden_chest():
+
+    global wooden_chest_closed
+    wooden_chest_closed = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/chests/wooden_chest/wooden_chest.png").convert_alpha()
+    wooden_chest_closed = pygame.transform.scale(wooden_chest_closed, (64, 64))
+
+    global wooden_chest_open
+    wooden_chest_open = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/chests/wooden_chest/open_wooden_chest.png").convert_alpha()
+    wooden_chest_open = pygame.transform.scale(wooden_chest_open, (64, 64))
+
+    global wooden_chest_sprites
+    wooden_chest_sprites = [ wooden_chest_closed, wooden_chest_open]
+
+    return wooden_chest_sprites
+
+def diamond_chest():
+
+    global diamond_chest_closed
+    diamond_chest_closed = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/chests/diamond_chest/diamond_chest.png").convert_alpha()
+    diamond_chest_closed = pygame.transform.scale(diamond_chest_closed, (64, 64))
+
+    global diamond_chest_open
+    diamond_chest_open = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/chests/diamond_chest/open_diamond_chest.png").convert_alpha()
+    diamond_chest_open = pygame.transform.scale(diamond_chest_open, (64, 64))
+
+    global diamond_chest_sprites
+    diamond_chest_sprites = [ diamond_chest_closed, diamond_chest_open ]
+
+    return diamond_chest_sprites
