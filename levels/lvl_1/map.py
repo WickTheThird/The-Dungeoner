@@ -387,6 +387,8 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
     state = False
 
+    print(poz)
+
     for i, x in enumerate(poz):
 
         collide = pygame.Rect.colliderect(mouse_poz, chest_poz[i])
