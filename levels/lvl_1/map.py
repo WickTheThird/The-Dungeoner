@@ -1,6 +1,7 @@
 # This is the map for LVL1
 
 import os
+import random
 
 from levels.lvl_1.images_graph import *
 
@@ -16,7 +17,7 @@ WORLD_MAP_L1 = [
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",    "P", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
-    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",    "L", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
@@ -69,6 +70,18 @@ WORLD_MAP_L1 = [
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV",  "LBV", "LBV"],
 ]
+
+
+# ITEMS
+
+
+GEMS = {
+    1 : enduri_coin(),
+    2 : rahdul_coin(),
+    3 : sardul_coin(),
+    4 : thrail_coin()
+}
+
 
 # colours
 
@@ -237,32 +250,39 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
                #             CHESTS           #
 
                if col == 'WC':
-                   blocks_coords.append(['WC', x, y])
-                   respawn_point.append(['WC', x, y])
 
                    value_nr += 1
+
+                   blocks_coords.append(['WC', x, y, value_nr])
+                   respawn_point.append(['WC', x, y, value_nr])
 
                    file_name = str(value_nr) + '.txt'
                    path = 'levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
 
                    with open(os.path.join(path, file_name), 'w') as f:
-                       pass
+                       item = random.randint(1, 4)
+
+                       f.write(str(item))
 
                    the_chests[(x, y)] = value_nr
 
                    screen.blit(wooden_chest_dis[0], (x, y))
 
                if col == 'DC':
-                   blocks_coords.append(['DC', x, y])
-                   respawn_point.append(['DC', x, y])
 
                    value_nr += 1
+
+                   blocks_coords.append(['DC', x, y, value_nr])
+                   respawn_point.append(['DC', x, y, value_nr])
+
                    path = 'levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
 
                    file_name = str(value_nr) + '.txt'
 
                    with open(os.path.join(path, file_name), 'w') as f:
-                       pass
+                       item = random.randint(1, 4)
+
+                       f.write(str(item))
 
                    the_chests[(x, y)] = value_nr
 
@@ -386,8 +406,7 @@ def border_lim(poz, player_poz, block_poz):
 def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
     state = False
-
-    print(poz)
+    which_chest = 0
 
     for i, x in enumerate(poz):
 
@@ -399,9 +418,11 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
         if collide and (x[0] == 'DC' or x[0] == 'WC'):
 
+            which_chest = x[3]
+
             state = True
 
-    return [state]
+    return [state, which_chest]
 
 
 def map_around(screen, poz):

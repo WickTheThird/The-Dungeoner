@@ -502,7 +502,7 @@ def lvl1(play_screen, play_run):
                 chest_id = open_chest_mouse(blocks_coords, mouse_col, blocks_col_dec, the_chests)
 
                 show_chest_inv = chest_id[0]
-                #which_chest = (chest_id[1][0], chest_id[1][1])
+                which_chest = chest_id[1]
 
             # the movements of the blocks
 
@@ -784,12 +784,19 @@ def lvl1(play_screen, play_run):
 
         if show_chest_inv is True:
 
-            #print("Chest nr " + the_chests[which_chest] + " was opened.")
+            if which_chest > 0:
 
-            pass
+                path = 'levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
+                file = str(which_chest) + ".txt"
+
+                with open(os.path.join(path, file), 'r') as f:
+                    items = f.readlines()
+
+                
 
 
-        #  ------ ------ ------ ----- ----- ------ ------- ------- ------- Inventory ------- -- ----- -------------------------------- --------------------------------
+
+        #  ------------------------------------------------------- Inventory ------------------------------------------------------------------------------
 
         if inv_state is True:
             play_screen.blit(inventory(), (0, 460))
