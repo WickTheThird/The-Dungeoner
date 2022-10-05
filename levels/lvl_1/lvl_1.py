@@ -791,8 +791,36 @@ def lvl1(play_screen, play_run):
 
                 with open(os.path.join(path, file), 'r') as f:
                     items = f.readlines()
-
                 
+                play_screen.blit(chest_inventory(), (190, -40))
+            
+                diff = 40
+                slot_x = 255
+                slot_y = -10
+
+                items_no = 0
+                item_position = 0
+                for x in range(60):
+
+                    i = x
+                    if i % 15 == 0:
+                        slot_x = 250.9999
+                        slot_y += diff
+
+                    slot_x += diff
+
+                    # draw inventory slots
+                    play_screen.blit(inv_slot(), (slot_x, slot_y))
+
+                    # draw inventory items
+                    if item_position == int(items[2].strip()):
+                        if items_no < int(items[1].strip()):
+                            play_screen.blit(GEMS[int(items[0].strip())][0], (slot_x, slot_y))
+
+                            items_no += 1
+                    
+                    item_position += 1
+                        
 
 
 

@@ -17,7 +17,7 @@ WORLD_MAP_L1 = [
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",    "P", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
-    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",    "L", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
+    ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "PFT",  "PFT",  "PFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LTV",  "LTV",  "PFT",  "PFT",  "PFT",  "LTV",  "LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
     ["LTV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT",  "LBV",  "LBV",  "PFT",  "PFT",  "PFT",  "LBV",  "LBV", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "CPFT", "LTV"],
@@ -76,10 +76,10 @@ WORLD_MAP_L1 = [
 
 
 GEMS = {
-    1 : enduri_coin(),
-    2 : rahdul_coin(),
-    3 : sardul_coin(),
-    4 : thrail_coin()
+    1 : (enduri_coin(), "enduri_coin"),
+    2 : (rahdul_coin(), "rahdul_coin"),
+    3 : (sardul_coin(), "sardul_coin"),
+    4 : (thrail_coin(), "thrail_coin")
 }
 
 
@@ -260,9 +260,22 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
                    path = 'levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
 
                    with open(os.path.join(path, file_name), 'w') as f:
+                       
                        item = random.randint(1, 4)
+                       
+                       f.write(str(item) + "\n")
 
-                       f.write(str(item))
+                   with open(os.path.join(path, file_name), 'a+') as f:
+                        
+                        f.seek(0)
+                        nr_items = random.randint(1, 10)
+
+                        f.write(str(nr_items) + "\n")
+
+                        f.seek(0)
+                        position_items = random.randint(0, 60)
+
+                        f.write(str(position_items) + "\n")
 
                    the_chests[(x, y)] = value_nr
 
@@ -279,10 +292,29 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
                    file_name = str(value_nr) + '.txt'
 
+                   # the item id
+
                    with open(os.path.join(path, file_name), 'w') as f:
+                       
                        item = random.randint(1, 4)
 
-                       f.write(str(item))
+                       f.write(str(item) + "\n")
+                    
+                   with open(os.path.join(path, file_name), 'a+') as f:
+
+                       # number of items
+                        
+                        f.seek(0)
+                        nr_items = random.randint(1, 10)
+
+                        f.write(str(nr_items) + "\n")
+
+                        # position of items in chests
+
+                        f.seek(0)
+                        position_items = random.randint(0, 60)
+
+                        f.write(str(position_items) + "\n")
 
                    the_chests[(x, y)] = value_nr
 

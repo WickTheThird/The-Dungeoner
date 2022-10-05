@@ -405,6 +405,13 @@ def diamond_chest():
 
     return diamond_chest_sprites
 
+def chest_inventory():
+
+    inventory = pygame.image.load('levels/lvl_1/graphics/dirs/inventory.png').convert_alpha()
+    inventory  = pygame.transform.scale(inventory, (800, 300))
+
+    return inventory
+
 
 # GEMS
 
@@ -413,7 +420,7 @@ def diamond_chest():
 def enduri_coin():
 
     enduri_coin = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/gems/enduri/enduri_coin.png").convert_alpha()
-    enduri_coin = pygame.transform.scale(enduri_coin, (12, 12))
+    enduri_coin = pygame.transform.scale(enduri_coin, (32, 32))
 
     return enduri_coin
 
@@ -422,7 +429,7 @@ def enduri_coin():
 def rahdul_coin():
 
     rahdul_coin = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/gems/rahdul/rahdul_coin.png").convert_alpha()
-    rahdul_coin = pygame.transform.scale(rahdul_coin, (12, 12))
+    rahdul_coin = pygame.transform.scale(rahdul_coin, (32, 32))
 
     return rahdul_coin
 
@@ -431,7 +438,7 @@ def rahdul_coin():
 def sardul_coin():
 
     sardul_coin = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/gems/sardul/sardul_coin.png").convert_alpha()
-    sardul_coin = pygame.transform.scale(sardul_coin, (12, 12))
+    sardul_coin = pygame.transform.scale(sardul_coin, (32, 32))
 
     return sardul_coin
 
@@ -440,6 +447,6 @@ def sardul_coin():
 def thrail_coin():
 
     sardul_coin = pygame.image.load("levels/lvl_1/graphics/terrain/blocks/gems/thradil/thradil_coin.png").convert_alpha()
-    sardul_coin = pygame.transform.scale(sardul_coin, (12, 12))
+    sardul_coin = pygame.transform.scale(sardul_coin, (32, 32))
 
     return sardul_coin
