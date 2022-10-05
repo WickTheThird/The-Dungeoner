@@ -41,39 +41,39 @@ def movement(keys):
     return [0, 0, True]
 
 
-def map_movement(keys):
+def map_movement(keys, constant_speed, vertical_speed):
 
      # The A Key and other related
 
     if keys[pygame.K_a] and not (keys[pygame.K_w] or keys[pygame.K_s]):
-        return [-20, 0, 'a']
+        return [-1 * constant_speed, 0, 'a']
 
     elif keys[pygame.K_a] and keys[pygame.K_w]:
-        return [-19, -19, 'aw']
+        return [-vertical_speed, -vertical_speed, 'aw']
 
     elif keys[pygame.K_a] and keys[pygame.K_s]:
-        return [-19, 19, 'as']
+        return [-vertical_speed, vertical_speed, 'as']
 
     # The D key and other related
     
     if keys[pygame.K_d] and not (keys[pygame.K_w] or keys[pygame.K_s]):
-        return [20, 0, 'd']
+        return [constant_speed, 0, 'd']
     
     elif keys[pygame.K_d] and keys[pygame.K_w]:
-        return [19, -19, 'dw']
+        return [vertical_speed, -vertical_speed, 'dw']
 
     elif keys[pygame.K_d] and keys[pygame.K_s]:
-        return [19, 19, 'ds']
+        return [vertical_speed, vertical_speed, 'ds']
 
     # Up
 
     if keys[pygame.K_w] and not (keys[pygame.K_a] or keys[pygame.K_d]):
-        return [0, -20, 'w']
+        return [0, -1 * constant_speed, 'w']
 
     # Down
 
     if keys[pygame.K_s] and not (keys[pygame.K_a] or keys[pygame.K_d]):
-        return [0, 20, 's']
+        return [0, constant_speed, 's']
 
     return [0, 0, 'n']
 

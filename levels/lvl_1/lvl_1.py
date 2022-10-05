@@ -412,8 +412,11 @@ def lvl1(play_screen, play_run):
 
     blue = (0, 0, 255)
     red = (255, 0, 0)
+    gray = (120,120,120)
+    brown = (153, 102, 51)
 
     font = pygame.font.Font('freesansbold.ttf', 32)
+    chest_font = pygame.font.Font('freesansbold.ttf', 12)
 
     # technical stuff
 
@@ -497,6 +500,8 @@ def lvl1(play_screen, play_run):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
 
+                # OPENING CHESTS
+
                 mouse_col = pygame.Rect(mouse_pos[0], mouse_pos[1], 16, 16)
 
                 chest_id = open_chest_mouse(blocks_coords, mouse_col, blocks_col_dec, the_chests)
@@ -504,11 +509,25 @@ def lvl1(play_screen, play_run):
                 show_chest_inv = chest_id[0]
                 which_chest = chest_id[1]
 
+                if show_chest_inv is True:
+                    moving_map = False
+                    map_movement(keys, 0, 0)
+                    inv_state = True
+                else:
+                    moving_map = True
+                    inv_state = False
+
+                # TAKING STUFF FROM INVENTORY
+
+                if show_chest_inv is True and inv_state is True:
+
+                    player_chest_inter( mouse_pos, which_chest )
+
             # the movements of the blocks
 
             if moving_map is True:
 
-                block_movement = map_movement(keys)
+                block_movement = map_movement(keys, 20, 19)
                 block_x_change = block_movement[0]
                 block_y_change = block_movement[1]
                 last = block_movement[2]
@@ -643,6 +662,11 @@ def lvl1(play_screen, play_run):
 
                 elif last == 'n':
                     idle_state = movment_history[-1]
+            
+            elif show_chest_inv is True and inv_state is True:
+
+                block_x_change = 0
+                block_y_change = 0
 
             else:
 
@@ -769,7 +793,7 @@ def lvl1(play_screen, play_run):
             play_screen.blit(hearts, (20, 20))
             play_screen.blit(sheild, (20, 60))
 
-        if moving_map is False:
+        if moving_map is False and show_chest_inv is False and inv_state is False:
 
             play_screen.blit(respawn_q, (600, 30))
 
@@ -779,7 +803,9 @@ def lvl1(play_screen, play_run):
             pygame.draw.rect(play_screen, red, pygame.Rect(800, 30, 128, 32), 1)
             play_screen.blit(no, (845, 30))
 
-        
+
+        # ----------------------------------------------------------------
+
         # Adding Chests...
 
         if show_chest_inv is True:
@@ -793,18 +819,28 @@ def lvl1(play_screen, play_run):
                     items = f.readlines()
                 
                 play_screen.blit(chest_inventory(), (190, -40))
-            
+
+                # slot positions
+
                 diff = 40
                 slot_x = 255
                 slot_y = -10
 
+                # items displayed in chests 
+
+                item_nr_dis = chest_font.render(items[0].strip(), False, red)
+
                 items_no = 0
                 item_position = 0
+
+                # writing to a file
+                item_coords_set = {""}
+
                 for x in range(60):
 
                     i = x
                     if i % 15 == 0:
-                        slot_x = 250.9999
+                        slot_x = 251
                         slot_y += diff
 
                     slot_x += diff
@@ -816,11 +852,26 @@ def lvl1(play_screen, play_run):
                     if item_position == int(items[2].strip()):
                         if items_no < int(items[1].strip()):
                             play_screen.blit(GEMS[int(items[0].strip())][0], (slot_x, slot_y))
+                            play_screen.blit(item_nr_dis, (slot_x + 28, slot_y + 24))
+
+                            item_coords_file = str(slot_x) + "|" + str(slot_y) + "\n"
+                            item_coords_set.add(item_coords_file)
 
                             items_no += 1
-                    
+
                     item_position += 1
-                        
+
+                # addind the info to the text file so that we can take it
+                for x in item_coords_set:
+
+                    if x not in items:
+
+                        with open(os.path.join(path, file), 'a+') as f:
+                            
+                            # addinf sllot_x and slot_y so that we can acces the info with the key id...
+                            f.seek(0)
+                            f.write(x)
+  
 
 
 

@@ -261,16 +261,22 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
                    with open(os.path.join(path, file_name), 'w') as f:
                        
+                       # item id
+
                        item = random.randint(1, 4)
                        
                        f.write(str(item) + "\n")
 
                    with open(os.path.join(path, file_name), 'a+') as f:
                         
+                        # number of items
+
                         f.seek(0)
                         nr_items = random.randint(1, 10)
 
                         f.write(str(nr_items) + "\n")
+
+                        # position of items in the chests
 
                         f.seek(0)
                         position_items = random.randint(0, 60)
@@ -292,7 +298,7 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
 
                    file_name = str(value_nr) + '.txt'
 
-                   # the item id
+                  # item id
 
                    with open(os.path.join(path, file_name), 'w') as f:
                        
@@ -435,6 +441,8 @@ def border_lim(poz, player_poz, block_poz):
 
     return state
 
+#  -------  CHESTS ---------
+
 def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
     state = False
@@ -456,6 +464,13 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
     return [state, which_chest]
 
+
+def player_chest_inter( mouse_poz, chest_id ):
+    
+    print(chest_id)
+
+
+# ---------- MAPPING AROUND BLOCKS -----------
 
 def map_around(screen, poz):
 
