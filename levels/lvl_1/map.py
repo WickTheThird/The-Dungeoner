@@ -456,7 +456,7 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
         #      CHESTS      #
 
-        if collide and (x[0] == 'DC' or x[0] == 'WC'):
+        if collide and (x[0] == 'DC' or x[0] == 'WC') and state is False:
 
             which_chest = x[3]
 
@@ -465,9 +465,13 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
     return [state, which_chest]
 
 
-def player_chest_inter( mouse_poz, chest_id ):
-    
-    print(chest_id)
+# INTERACTION BETWEEN PLAYER AND CHESTS (THIS COVERS GRABBING AND REMOVING ITEMS -- KEY BINDS AND ALL THAT)
+
+# N0TE: THIS IN THEORY WORLS, WE JUST NEED TO FIND A WAY TO HAVE THE COORINATES OF THE MOUSE AT ALL TIMES
+
+def player_chest_inter(screen, mouse_poz, chest_id ):
+
+    pass
 
 
 # ---------- MAPPING AROUND BLOCKS -----------

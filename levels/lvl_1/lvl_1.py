@@ -521,7 +521,7 @@ def lvl1(play_screen, play_run):
 
                 if show_chest_inv is True and inv_state is True:
 
-                    player_chest_inter( mouse_pos, which_chest )
+                    player_chest_inter(play_run, mouse_pos, which_chest )
 
             # the movements of the blocks
 
