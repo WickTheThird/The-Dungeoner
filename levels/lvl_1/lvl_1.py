@@ -519,9 +519,17 @@ def lvl1(play_screen, play_run):
 
                 # TAKING STUFF FROM INVENTORY
 
-                if show_chest_inv is True and inv_state is True:
+            # MOUSE CURSOR COLLISION (HOVER AND PICKING UP ITEMS)
 
-                    player_chest_inter(play_run, mouse_pos, which_chest )
+            if show_chest_inv is True and inv_state is True:
+
+                # CHECKING IF THE MOUSE IS MOVING GIVEN THAT THE INVENTORY AND THE CHEST IS OPEN -- necessary for accessing the ches's file lol
+                if event.type == pygame.MOUSEMOTION:
+                    mouse_pos = event.pos
+                    #print(mouse_pos)
+
+                # chest accessing
+                player_chest_inter(play_screen, mouse_pos, which_chest, keys)
 
             # the movements of the blocks
 
@@ -828,7 +836,7 @@ def lvl1(play_screen, play_run):
 
                 # items displayed in chests 
 
-                item_nr_dis = chest_font.render(items[0].strip(), False, red)
+                item_nr_dis = chest_font.render(items[1].strip(), False, red)
 
                 items_no = 0
                 item_position = 0
@@ -873,9 +881,9 @@ def lvl1(play_screen, play_run):
                             f.write(x)
   
 
-
-
         #  ------------------------------------------------------- Inventory ------------------------------------------------------------------------------
+
+        SLOTS = {}
 
         if inv_state is True:
             play_screen.blit(inventory(), (0, 460))
@@ -904,6 +912,8 @@ def lvl1(play_screen, play_run):
                 if i % 10 == 0:
                     slot_x = 280
                     slot_y += diff
+
+                SLOTS[x] = [slot_x, slot_y]
 
                 slot_x += diff
 
@@ -939,6 +949,27 @@ def lvl1(play_screen, play_run):
 
             play_screen.blit(heart_disp, (163, 665))
             play_screen.blit(sheild_disp, (220, 664))
+
+            # NOTE: THIS IS DISPLAYING THE ITEMS IN THE INVENTORY FILE...
+
+            path_inv = "/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/dirs"
+            file_inv = "inv_contents.txt"
+
+            with open(os.path.join(path_inv, file_inv), 'r') as f:
+                
+                the_items = f.readlines()
+
+                for x in the_items:
+
+                    item_id = int(x.strip().split("|")[0])
+                    item_no = int(x.strip().split("|")[-1])
+
+                    item_nr_dis = chest_font.render(str(item_no), False, red)
+
+                    if item_no > 0:
+                        play_screen.blit(GEMS[item_id][0], (SLOTS[item_id][0], SLOTS[item_id][1]))
+                        play_screen.blit(item_nr_dis, (SLOTS[item_id][0], SLOTS[item_id][1]))
+                        
 
         else:
             character_stats = False

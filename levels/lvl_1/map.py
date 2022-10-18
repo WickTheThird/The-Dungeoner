@@ -82,7 +82,6 @@ GEMS = {
     4 : (thrail_coin(), "thrail_coin")
 }
 
-
 # colours
 
 blue = (0, 0, 255)
@@ -272,7 +271,7 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
                         # number of items
 
                         f.seek(0)
-                        nr_items = random.randint(1, 10)
+                        nr_items = random.randint(1, 100)
 
                         f.write(str(nr_items) + "\n")
 
@@ -284,7 +283,6 @@ def stone_block_dis(screen, WORLD_MAP, TILESIZE, change_x, change_y):
                         f.write(str(position_items) + "\n")
 
                    the_chests[(x, y)] = value_nr
-
                    screen.blit(wooden_chest_dis[0], (x, y))
 
                if col == 'DC':
@@ -467,14 +465,94 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
 # INTERACTION BETWEEN PLAYER AND CHESTS (THIS COVERS GRABBING AND REMOVING ITEMS -- KEY BINDS AND ALL THAT)
 
-# N0TE: THIS IN THEORY WORLS, WE JUST NEED TO FIND A WAY TO HAVE THE COORINATES OF THE MOUSE AT ALL TIMES
+# NOTE: THIS IN THEORY WORLS, WE JUST NEED TO FIND A WAY TO HAVE THE COORINATES OF THE MOUSE AT ALL TIMES
+# NOTE: SEARCH FOR SIGNALS IN PYTHION3
 
-def player_chest_inter(screen, mouse_poz, chest_id ):
+# NOTE: later on today we need to replace the search by coordinates with sarch by id... as same id's can exist with different coordinates
 
-    pass
+def player_chest_inter(screen, mouse_poz, chest_id, keys):
 
+    path = '/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
+    file = str(chest_id) + '.txt'
 
-# ---------- MAPPING AROUND BLOCKS -----------
+    with open(os.path.join(path, file)) as f:
+        chest_info = f.readlines()
+
+        if len(chest_info) > 3:
+            chest_pos = chest_info[3].split("|")
+
+            # organising info
+
+            # Making hover collision happen
+
+            mouse_rect = pygame.Rect(mouse_poz[0], mouse_poz[1], 8, 8)
+
+            item_rect = pygame.Rect(int(chest_pos[0].strip()), int(chest_pos[1].strip()), 40, 40)
+
+            # collision
+            collision = pygame.Rect.colliderect(mouse_rect, item_rect)
+
+            # NOTE: THIS IS TAKING THE ITEMS FROM CHESTS AND ADDS THEM TO THE INVENTORY
+
+            if keys[pygame.K_t] and collision and int(chest_info[1].strip()) > 0:
+
+                # EDITING THE CHEST FILE TO CHANGE THE CHEST INFO
+
+                chest_path = '/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
+                chest_file = str(chest_id) + ".txt"
+
+                with open(os.path.join(chest_path, chest_file), 'r') as f:
+
+                    item_info = f.readlines()
+
+                    item_id = item_info[0]
+                    item_no = str(int(item_info[1]) - 1) + '\n'
+
+                    #continuing with chest file editing (this check if the number of items is negative...)
+
+                    if int(item_no.strip()) < 0:
+                         item_no = '0' + '\n'
+
+                    item_spec_loc = item_info[2]
+                    item_coords = item_info[3]
+
+                    new_item_info = item_id + item_no + item_spec_loc + item_coords + '\n'
+
+                with open(os.path.join(chest_path, chest_file), 'w') as f:
+
+                    f.write(new_item_info + "\n")
+
+                # EDITING THE FILE WITH THE RIGH NUMBER OF ITEMS
+
+                inv_path = "/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/dirs"
+                file = "inv_contents.txt"
+
+                with open(os.path.join(inv_path, file), 'r') as f:
+
+                    inv_info = f.readlines()
+                    id_arr = []
+
+                    for x in inv_info:
+                        x = int(x.strip().split("|")[0])
+                        id_arr.append(x)
+
+                    for x in GEMS:
+                        if x not in id_arr:
+                            item_inv_id = str(x) + "|" + "0" + "\n"
+                            inv_info.append(item_inv_id)
+
+                    for i, x in enumerate(id_arr):
+                        if x == int(chest_info[0].strip()):
+                            inv_info[i] = str(x) + "|" + str(int(inv_info[i].strip().split("|")[1]) + 1) + "\n"
+                    
+                with open(os.path.join(inv_path, file), "w") as f:
+
+                    for x in inv_info:
+                        f.write(x)
+            
+            # NOTE: THIS IS TAKING ITEMS FROM THE INVENTORY AND ADDS THEM TO THE CHEST  (to do...)
+                    
+# ---------- MAPPING AROUND BLOCKS ----------- #
 
 def map_around(screen, poz):
 
