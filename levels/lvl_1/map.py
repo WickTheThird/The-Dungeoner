@@ -465,28 +465,26 @@ def open_chest_mouse(poz, mouse_poz, chest_poz, the_chests):
 
 # INTERACTION BETWEEN PLAYER AND CHESTS (THIS COVERS GRABBING AND REMOVING ITEMS -- KEY BINDS AND ALL THAT)
 
-# NOTE: THIS IN THEORY WORLS, WE JUST NEED TO FIND A WAY TO HAVE THE COORINATES OF THE MOUSE AT ALL TIMES
-# NOTE: SEARCH FOR SIGNALS IN PYTHION3
+def player_chest_inter(screen, mouse_poz, chest_id, keys, SLOTS):
 
-# NOTE: later on today we need to replace the search by coordinates with sarch by id... as same id's can exist with different coordinates
-
-def player_chest_inter(screen, mouse_poz, chest_id, keys):
-
-    path = '/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
+    path = 'levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
     file = str(chest_id) + '.txt'
+
+    inv_path = 'levels/lvl_1/graphics/dirs'
+    inv_file = 'inv_contents.txt'
 
     with open(os.path.join(path, file)) as f:
         chest_info = f.readlines()
 
         if len(chest_info) > 3:
             chest_pos = chest_info[3].split("|")
+            chest_id = int(chest_info[0])
 
             # organising info
 
             # Making hover collision happen
 
             mouse_rect = pygame.Rect(mouse_poz[0], mouse_poz[1], 8, 8)
-
             item_rect = pygame.Rect(int(chest_pos[0].strip()), int(chest_pos[1].strip()), 40, 40)
 
             # collision
@@ -498,10 +496,7 @@ def player_chest_inter(screen, mouse_poz, chest_id, keys):
 
                 # EDITING THE CHEST FILE TO CHANGE THE CHEST INFO
 
-                chest_path = '/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/terrain/blocks/chests/chests_created'
-                chest_file = str(chest_id) + ".txt"
-
-                with open(os.path.join(chest_path, chest_file), 'r') as f:
+                with open(os.path.join(path, file), 'r') as f:
 
                     item_info = f.readlines()
 
@@ -518,13 +513,12 @@ def player_chest_inter(screen, mouse_poz, chest_id, keys):
 
                     new_item_info = item_id + item_no + item_spec_loc + item_coords + '\n'
 
-                with open(os.path.join(chest_path, chest_file), 'w') as f:
+                with open(os.path.join(path, file), 'w') as f:
 
                     f.write(new_item_info + "\n")
 
                 # EDITING THE FILE WITH THE RIGH NUMBER OF ITEMS
-
-                inv_path = "/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/dirs"
+                inv_path = "levels/lvl_1/graphics/dirs"
                 file = "inv_contents.txt"
 
                 with open(os.path.join(inv_path, file), 'r') as f:
@@ -551,7 +545,55 @@ def player_chest_inter(screen, mouse_poz, chest_id, keys):
                         f.write(x)
             
             # NOTE: THIS IS TAKING ITEMS FROM THE INVENTORY AND ADDS THEM TO THE CHEST  (to do...)
+
+            with open(os.path.join(inv_path, inv_file), 'r') as f:
+                
+                inv_info = f.readlines()
+                available_ids = [ int(x.strip().split('|')[0]) for x in inv_info if int(x.strip().split('|')[1]) > 0 ]
+
+            inv_collision = False
+            counter = 0
+            while counter < len(SLOTS) and inv_collision is False:
+                
+                inv_item_rect = pygame.Rect(SLOTS[counter][0], SLOTS[counter][1], 40, 40)
+                pre_inv_collision = pygame.Rect.colliderect(mouse_rect, inv_item_rect)
+
+                if pre_inv_collision and (counter in available_ids):
+                    inv_collision = True
+
+                counter += 1
+            
+            counter -= 1
+
+            if inv_collision and keys[pygame.K_r]:
+
+                with open(os.path.join(inv_path, inv_file), 'r') as f:
                     
+                    inv_info = f.readlines()
+
+                    new_info = ""
+
+                    inv_available_ids = [ int(x.strip().split('|')[0]) for x in inv_info ] # NOTE: the id is mapped respectively to the items int the other list
+                    inv_respective_lens = [ int(x.strip().split('|')[1]) for x in inv_info ]
+
+                for i, x in enumerate(inv_info):
+
+                    new_number = inv_respective_lens[i]
+
+                    if counter == inv_available_ids[i]:
+                        new_number = (inv_respective_lens[i] - 1)
+                        new_info += (str(inv_available_ids[i]) + '|' + str(new_number)) + '\n'
+                    else:
+                        new_info += (str(inv_available_ids[i]) + '|' + str(new_number)) + '\n'
+
+                with open(os.path.join(inv_path, inv_file), "w+") as f:
+                    f.write(new_info)
+
+                with open(os.path.join(path, file), 'r') as f:
+                    new_chest_info = f.readlines()
+
+                
+
 # ---------- MAPPING AROUND BLOCKS ----------- #
 
 def map_around(screen, poz):

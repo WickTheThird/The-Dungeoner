@@ -443,6 +443,10 @@ def lvl1(play_screen, play_run):
 
     character_walking_ind = 0
 
+    # POSITION OF ITEMS IN INVENTORY
+
+    SLOTS = {}
+
     # frame
 
     clock = pygame.time.Clock()
@@ -529,13 +533,14 @@ def lvl1(play_screen, play_run):
                     #print(mouse_pos)
 
                 # chest accessing
-                player_chest_inter(play_screen, mouse_pos, which_chest, keys)
+
+                player_chest_inter(play_screen, mouse_pos, which_chest, keys, SLOTS)
 
             # the movements of the blocks
 
             if moving_map is True:
 
-                block_movement = map_movement(keys, 20, 19)
+                block_movement = map_movement(keys, 15, 12)
                 block_x_change = block_movement[0]
                 block_y_change = block_movement[1]
                 last = block_movement[2]
@@ -667,9 +672,6 @@ def lvl1(play_screen, play_run):
                     character_ind_up = 0
                     character_ind_left = 0
                     character_ind_right = 0
-
-                elif last == 'n':
-                    idle_state = movment_history[-1]
             
             elif show_chest_inv is True and inv_state is True:
 
@@ -767,7 +769,7 @@ def lvl1(play_screen, play_run):
                 player_dis(play_screen, player_init_coords[0], player_init_coords[1], idle_state, character_walking_ind)
                 map_around(play_screen, blocks_coords)
             
-            #pygame.draw.rect(play_screen, blue, player_border_col)
+            # pygame.draw.rect(play_screen, blue, player_border_col)
 
         
         # RESPAWN
@@ -825,7 +827,7 @@ def lvl1(play_screen, play_run):
 
                 with open(os.path.join(path, file), 'r') as f:
                     items = f.readlines()
-                
+
                 play_screen.blit(chest_inventory(), (190, -40))
 
                 # slot positions
@@ -883,12 +885,10 @@ def lvl1(play_screen, play_run):
 
         #  ------------------------------------------------------- Inventory ------------------------------------------------------------------------------
 
-        SLOTS = {}
-
         if inv_state is True:
             play_screen.blit(inventory(), (0, 460))
 
-            #player 
+            #player
             play_screen.blit(player_1_down_idle(), (854.5, 628))
 
             # Armor inventory
@@ -952,7 +952,7 @@ def lvl1(play_screen, play_run):
 
             # NOTE: THIS IS DISPLAYING THE ITEMS IN THE INVENTORY FILE...
 
-            path_inv = "/Users/filipbumbu/Documents/GitHub/Learning/levels/lvl_1/graphics/dirs"
+            path_inv = "levels/lvl_1/graphics/dirs"
             file_inv = "inv_contents.txt"
 
             with open(os.path.join(path_inv, file_inv), 'r') as f:
@@ -969,9 +969,9 @@ def lvl1(play_screen, play_run):
                     if item_no > 0:
                         play_screen.blit(GEMS[item_id][0], (SLOTS[item_id][0], SLOTS[item_id][1]))
                         play_screen.blit(item_nr_dis, (SLOTS[item_id][0], SLOTS[item_id][1]))
-                        
 
         else:
+
             character_stats = False
 
         pygame.display.update()
