@@ -54,7 +54,7 @@ class Game:
             for event in pygame.event.get():
 
                 # key events
-                self.keys=pygame.key.get_pressed()
+                self.keys = pygame.key.get_pressed()
 
                 if event.type == pygame.MOUSEMOTION:
                     self.mouse_motion = event.pos
