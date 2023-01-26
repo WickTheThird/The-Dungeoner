@@ -3,6 +3,7 @@ import pygame, sys
 # import settings and debug
 from resource_path import debug
 from settings import *
+from player.player import *
 
 # import main menu
 from menu import MainMenu
@@ -18,9 +19,16 @@ class Game:
         self.mouse_motion  = (0, 0)
         self.mouse_click = False
 
+        # key press events
+        self.keys = []
+
         #main menu
         self.menu = MainMenu()
         self.image = 1
+
+        # player
+        self.player = Player()
+        self.player_img = 0
 
         # colors
         self.dark_green = (12, 14, 0)
@@ -32,6 +40,9 @@ class Game:
         self.resources = None
         self.quit = None
 
+        # the player
+        self.player = Player()
+
     def run(self):
         #name of game
         pygame.display.set_caption('The Doungeoner')
@@ -41,6 +52,9 @@ class Game:
         #main loop
         while True:
             for event in pygame.event.get():
+
+                # key events
+                self.keys=pygame.key.get_pressed()
 
                 if event.type == pygame.MOUSEMOTION:
                     self.mouse_motion = event.pos
@@ -52,7 +66,7 @@ class Game:
                 state = self.menu.buttons(self.mouse_motion, self.mouse_click)
                 self.lvl, self.settings, self.resources, self.quit = state[0], state[1], state[2], state[3]
 
-                if event.type == pygame.QUIT or self.quit == True:
+                if event.type == pygame.QUIT or self.quit == True or self.keys[K_ESCAPE]:
                     pygame.quit()
                     sys.exit()
 
@@ -64,9 +78,17 @@ class Game:
                     self.image = 1
 
                 self.image = self.menu.run(self.screen, self.image)
+        
+            # player level
+            if self.lvl is True:
+                if self.player_img > 3:
+                    self.player_img = 0
+                
+                self.player_img = self.player.run(self.screen, self.keys, self.player_img)
 
             # end of events
             self.image += 1
+            self.player_img += 1
             pygame.display.update()
             self.clock.tick(FPS)
 
