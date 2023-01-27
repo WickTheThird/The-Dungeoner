@@ -41,7 +41,7 @@ class Player:
         idle_player = pygame.transform.scale(idle_player, (32, 56))
 
         return idle_player
-    
+
     def run(self, screen, keys, image=0):
         # manage the animation
         self.clock.tick(25)
@@ -63,19 +63,20 @@ class Player:
             self.x -= 20
             self.move = True
 
+
         if self.move is True and (keys[K_a] is False and keys[K_d] is False and keys[K_w] is False and keys[K_s] is False):
             self.move = False
 
         if self.move is True:
-            screen.blit(self.idle_player_move(image), ((self.width / 2) + self.x, (self.height / 2) + self.y))
-            self.player_body = pygame.Rect(((self.width / 2) + self.x, (self.height / 2) + self.y), (32, 56))
+            screen.blit(self.idle_player_move(image), ((self.width / 2), (self.height / 2)))
+            self.player_body = pygame.Rect(((self.width / 2), (self.height / 2)), (32, 56))
 
-            #pygame.draw.rect(screen, (255, 0, 0), Rect(((self.width / 2) + self.x, (self.height / 2) + self.y), (32, 56)), 1) # <-- enable this when testing
+            #pygame.draw.rect(screen, (255, 0, 0), Rect(((self.width / 2), (self.height / 2)), (32, 56)), 1) # <-- enable this when testing
 
         else:
-            screen.blit(self.idle_player_move(0), ((self.width / 2) + self.x, (self.height / 2) + self.y))
+            screen.blit(self.idle_player_move(0), ((self.width / 2), (self.height / 2)))
 
-        return image
+        return [image, self.x, self.y]
 
     def playerBody(self):
         return self.player_body

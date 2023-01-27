@@ -4,6 +4,7 @@ import pygame, sys
 from resource_path import debug
 from settings import *
 from player.player import *
+from levels.level import *
 
 # import main menu
 from menu import MainMenu
@@ -29,6 +30,9 @@ class Game:
         # player
         self.player = Player()
         self.player_img = 0
+        
+        # the level
+        self.the_level = LevelBase()
 
         # colors
         self.dark_green = (12, 14, 0)
@@ -84,7 +88,11 @@ class Game:
                 if self.player_img > 3:
                     self.player_img = 0
                 
-                self.player_img = self.player.run(self.screen, self.keys, self.player_img)
+                player_changes = self.player.run(self.screen, self.keys, self.player_img)
+                
+                self.player_img = player_changes[0]
+                self.the_level.run(self.screen, player_changes[1], player_changes[2])
+                
 
             # end of events
             self.image += 1
