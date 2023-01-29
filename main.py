@@ -70,7 +70,7 @@ class Game:
                 state = self.menu.buttons(self.mouse_motion, self.mouse_click)
                 self.lvl, self.settings, self.resources, self.quit = state[0], state[1], state[2], state[3]
 
-                if event.type == pygame.QUIT or self.quit == True or self.keys[K_ESCAPE]:
+                if event.type == pygame.QUIT or self.quit == True or self.keys[K_l]:
                     pygame.quit()
                     sys.exit()
 
@@ -82,17 +82,13 @@ class Game:
                     self.image = 1
 
                 self.image = self.menu.run(self.screen, self.image)
-        
+
             # player level
             if self.lvl is True:
                 if self.player_img > 3:
                     self.player_img = 0
-                
-                player_changes = self.player.run(self.screen, self.keys, self.player_img)
-                
-                self.player_img = player_changes[0]
-                self.the_level.run(self.screen, player_changes[1], player_changes[2])
-                
+
+                self.player_img = self.the_level.run(self.screen, self.keys, self.player_img)
 
             # end of events
             self.image += 1

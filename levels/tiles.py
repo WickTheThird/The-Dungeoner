@@ -1,4 +1,5 @@
 
 class Tiles: # To be added!
 
-    pass
+    def __init__(self):
+        pass

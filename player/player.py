@@ -30,10 +30,7 @@ class Player:
         self.x = 0
         self.y = 0
 
-        # declaring collision states
-        self.player_body = None
-
-    def idle_player_move(self, image=0):
+    def idleAnimation(self, image=0):
 
         file = self.player_idle + str(image) + '.png'
 
@@ -42,41 +39,16 @@ class Player:
 
         return idle_player
 
-    def run(self, screen, keys, image=0):
-        # manage the animation
+    def run(self, screen, state, image=0):
         self.clock.tick(25)
-
-        # movement
-        if keys[K_w]:
-            self.y -= 20
-            self.move = True
-
-        if keys[K_s]:
-           self.y += 20
-           self.move = True
-
-        if keys[K_d]:
-            self.x += 20
-            self.move = True
-
-        if keys[K_a]:
-            self.x -= 20
-            self.move = True
-
-
-        if self.move is True and (keys[K_a] is False and keys[K_d] is False and keys[K_w] is False and keys[K_s] is False):
-            self.move = False
-
-        if self.move is True:
-            screen.blit(self.idle_player_move(image), ((self.width / 2), (self.height / 2)))
+        
+        if state is True:
+            screen.blit(self.idleAnimation(image), ((self.width / 2), (self.height / 2)))
             self.player_body = pygame.Rect(((self.width / 2), (self.height / 2)), (32, 56))
-
-            #pygame.draw.rect(screen, (255, 0, 0), Rect(((self.width / 2), (self.height / 2)), (32, 56)), 1) # <-- enable this when testing
-
         else:
-            screen.blit(self.idle_player_move(0), ((self.width / 2), (self.height / 2)))
+            screen.blit(self.idleAnimation(0), ((self.width / 2), (self.height / 2)))
 
-        return [image, self.x, self.y]
+        return [state, image]
 
     def playerBody(self):
-        return self.player_body
+        return Rect(((self.width / 2), (self.height / 2)), (32, 56))
