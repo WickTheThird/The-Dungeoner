@@ -24,13 +24,13 @@ class Map:
 
         for row in range(rows):
             if row == 0:
-                self.map.append(['x'] * colums)
+                self.map.append(['T'] * colums)
             elif row == (rows - 1):
-                self.map.append(['x'] * colums)
+                self.map.append(['B'] * colums)
             else:
                 self.map.append([' '] * colums)
-                self.map[row][0] = 'x'
-                self.map[row][-1] = 'x'
+                self.map[row][0] = 'L'
+                self.map[row][-1] = 'R'
 
     def upper_chamber(self):
         pass
