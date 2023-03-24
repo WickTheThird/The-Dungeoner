@@ -9,8 +9,6 @@ from levels.level import *
 # import main menu
 from menu import MainMenu
 
-#import game related stuff
-
 class Game:
     def __init__(self):
         #pygame setup

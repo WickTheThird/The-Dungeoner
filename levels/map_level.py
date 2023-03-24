@@ -7,8 +7,6 @@ from settings import *
 from screeninfo import get_monitors
 import random
 
-# this will be just a generator per level
-# this is not the main MAP!
 class Map:
 
     def __init__(self):
@@ -23,41 +21,25 @@ class Map:
         rows = random.randint(55, 70)
 
         for row in range(rows):
+            
+            if row == 2:
+                self.map.append([' '] * colums)
+            
             if row == 0:
-                self.map.append(['T'] * colums)
+                self.map.append(['LT'] * colums)
             elif row == (rows - 1):
-                self.map.append(['B'] * colums)
+                self.map.append(['LB'] * colums)
             else:
                 self.map.append([' '] * colums)
-                self.map[row][0] = 'L'
-                self.map[row][-1] = 'R'
-
-    def upper_chamber(self):
-        pass
-
-    def lower_chamber(self):
-        pass
-
-    def left_chambers(self):
-        pass
-
-    def right_chambers(self):
-        pass
-
-    def center_chamber(self): # note that this will determine the number of left, right, upper, and lower chambers
-        pass
-
-    def upper_links(self): # NOTE this will detemine the number of center chambers
-        pass
-
-    def lower_links(self):
-        pass
-
-    def left_links(self):
-        pass
-
-    def right_links(self):
-        pass
+                self.map[row][0] = 'LL'
+                self.map[row][-1] = 'LR'
+    
+    def mainChamber(self):        
+        # PICKING THE CENTER POINT
+        xCenter = len(self.map[0]) // 2
+        yCenter = len(self.map) // 2
+        
+        self.map[yCenter][xCenter] = ['MC']
     
     def getMap(self):
         return self.map

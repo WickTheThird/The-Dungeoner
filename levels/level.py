@@ -17,83 +17,48 @@ class LevelBase:
         self.width = get_monitors()[0].width
         
         # the map
-        self.map = Map().getMap()
+        self.map = Map()
         self.x = 0
         self.y = 0
-        self.vel = 20
 
         # the player
         self.player = Player()
         self.state = False
-        
-        # tile collision
-        self.colUp = False
-        self.colDown = False
-        self.colRight = False
-        self.colLeft = False
     
-    def drawMap(self, keys):
-        for row_index, row in enumerate(self.map):
-            for col_index, col in enumerate(row):
-
-                x = (col_index * TILESIZE) - self.x
-                y = (row_index * TILESIZE) - self.y
-
-                if col == 'T':
-
-                    if self.player.playerBody().top < Rect(x, y, TILESIZE, TILESIZE).bottom:
-                        self.colUp = True
-                    if self.player.playerBody().top < Rect(x, y, TILESIZE, TILESIZE).bottom and keys[K_s]:
-                        self.colUp = False
-
-                    pygame.draw.rect(self.screen, (0, 0, 0), Rect(x, y, TILESIZE, TILESIZE), 1)
-            
-                if col == 'B':
-                    
-                    if self.player.playerBody().bottom > Rect(x, y, TILESIZE, TILESIZE).top:
-                        self.colDown = True
-                    if self.player.playerBody().bottom > Rect(x, y, TILESIZE, TILESIZE).top and keys[K_w]:
-                        self.colDown = False
-
-                    pygame.draw.rect(self.screen, (0, 0, 0), Rect(x, y, TILESIZE, TILESIZE), 1)
+    def Borders(self):
+        map = self.map.getMap()
+        
+        for rowInd, row in enumerate(map):
+            for colInd, col in enumerate(row):
                 
-                if col == 'L':
-                            
-                    if self.player.playerBody().left < Rect(x, y, TILESIZE, TILESIZE).right:
-                        self.colLeft = True
-                    if self.player.playerBody().left < Rect(x, y, TILESIZE, TILESIZE).right and keys[K_d]:
-                        self.colLeft = False
-
-                    pygame.draw.rect(self.screen, (0, 0, 0), Rect(x, y, TILESIZE, TILESIZE), 1)
-            
-                if col == 'R':
-                    
-                    if self.player.playerBody().right > Rect(x, y, TILESIZE, TILESIZE).left:
-                        self.colRight = True
-                    if self.player.playerBody().right > Rect(x, y, TILESIZE, TILESIZE).left and keys[K_a]:
-                        self.colRight = False
-
-                    pygame.draw.rect(self.screen, (0, 0, 0), Rect(x, y, TILESIZE, TILESIZE), 1)
+                x = (colInd * TILESIZE) - self.x
+                y = (rowInd * TILESIZE) - self.y
+                
+                if col == 'LT' or col == 'LR' or col == 'LL' or col == 'LB':
+                    pygame.draw.rect(self.screen, (0,0,0), (x, y, TILESIZE, TILESIZE))
+    
+    def Center(self):
+        room = self.map.mainChamber()
 
     def run(self, screen, keys, image=0):
 
         self.screen = screen
 
-        self.drawMap(keys)
+        self.Borders()
 
-        if keys[K_w] and self.colUp is False:
+        if keys[K_w]:
             self.y -= 20
             self.state = True
 
-        if keys[K_s] and self.colDown is False:
+        if keys[K_s]:
            self.y += 20
            self.state = True
 
-        if keys[K_d] and self.colRight is False:
+        if keys[K_d]:
             self.x += 20
             self.state = True
 
-        if keys[K_a] and self.colLeft is False:
+        if keys[K_a] :
             self.x -= 20
             self.state = True
 

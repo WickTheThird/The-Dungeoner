@@ -16,8 +16,8 @@ class Player:
         self.clock = pygame.time.Clock()
 
         #path to player animation
-        self.player_idle = 'graphics/player/knight_f_idle_anim_f' # note that an int must go after this 
-                                                                  # max is 3 (for idle)
+        self.player_idle = 'graphics/player/knight_f_idle_anim_f'
+
         # screen size
         self.height = get_monitors()[0].height
         self.width = get_monitors()[0].width
