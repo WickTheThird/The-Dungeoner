@@ -43,6 +43,18 @@ class Tiles:
 
         return tile
 
+    def crackedFloor(self):
+        tile = pygame.image.load(self.graphicsPath + "Edge_single_crack.png").convert_alpha()
+        tile = pygame.transform.scale(tile, (64, 64))
+
+        return tile
+    
+    def edgeSingle(self):
+        tile = pygame.image.load(self.graphicsPath + "Edge_single.png").convert_alpha()
+        tile = pygame.transform.scale(tile, (64, 64))
+
+        return tile
+
     def edgeE(self):
         tile = pygame.image.load(self.graphicsPath + "Edge_e.png").convert_alpha()
         tile = pygame.transform.scale(tile, (64, 64))
@@ -90,10 +102,3 @@ class Tiles:
         tile = pygame.transform.scale(tile, (64, 64))
 
         return tile
-
-    def edgeSingle(self):
-        tile = pygame.image.load(self.graphicsPath + "Edge_single.png").convert_alpha()
-        tile = pygame.transform.scale(tile, (64, 64))
-
-        return tile
-
