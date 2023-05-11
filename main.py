@@ -1,46 +1,54 @@
-import pygame, sys
-
-#? import settings and debug
+import pygame
+import sys
 from resource_path import debug
 from settings import *
-#? player
 from player.player import Player
-#? map_gen
 from map_gen.level import LevelBase
 from map_gen.map_level import Map
-#? main.py
 from menu import MainMenu
 
 class Game:
     def __init__(self):
-        #> pygame setup
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
-
-        #> maps
-        self.map = Map(width=1000, height=1000, scale=10, octaves=4)
-
-        #> level
+        self.map = Map(width=100, height=100, scale=2, octaves=5)
+        self.scale = 16
+        self.mapX = 0
+        self.mapY = 0
         self.level = LevelBase()
 
+    def move(self, dx, dy):
+        self.mapX += dx
+        self.mapY -= dy
+
+    def change_scale(self, delta):
+        self.scale += delta
+
     def run(self):
-        #> name of game
         pygame.display.set_caption('The Doungeoner')
 
-        #> main loop
-        while True:
+        key_actions = {
+            pygame.K_w: (lambda: self.move(0, 10)),
+            pygame.K_s: (lambda: self.move(0, -10)),
+            pygame.K_a: (lambda: self.move(-10, 0)),
+            pygame.K_d: (lambda: self.move(10, 0)),
+            pygame.K_m: (lambda: self.change_scale(5)),
+            pygame.K_n: (lambda: self.change_scale(-5)),
+        }
 
-            #> event loop
+        while True:
+            self.screen.fill((0, 0, 0))  # Clear the screen
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_l):
                     pygame.quit()
                     sys.exit()
 
-            #> draw map
-            self.map.draw_map(self.screen)
+                if event.type == pygame.KEYDOWN and event.key in key_actions:
+                    key_actions[event.key]()
 
-            #> update display
+            self.map.draw_map(self.screen, self.mapX, self.mapY, self.scale)
             pygame.display.update()
             self.clock.tick(FPS)
 
