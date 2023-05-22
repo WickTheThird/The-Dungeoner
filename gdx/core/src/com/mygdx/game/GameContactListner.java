@@ -21,16 +21,17 @@ public class GameContactListner implements ContactListener {
         if (a.getUserData() == null || a.getUserData() == null) return;
 
         if (a.getUserData() == ContactType.BALL || b.getUserData() == ContactType.BALL) {
+            //? This is an example of how to use the contact listner
             // Ball - Player
-            if (a.getUserData() == ContactType.PLAYER || b.getUserData() == ContactType.PLAYER) {
-                gameScreen.getBall().reverseVelX();
-                gameScreen.getBall().incSpeed();
-            }
+            // if (a.getUserData() == ContactType.PLAYER || b.getUserData() == ContactType.PLAYER) {
+            //     gameScreen.getBall().reverseVelX();
+            //     gameScreen.getBall().incSpeed();
+            // }
 
             // Ball - Wall
-            if (a.getUserData() == ContactType.WALL || b.getUserData() == ContactType.WALL) {
-                gameScreen.getBall().reverseVelY();
-            }
+            // if (a.getUserData() == ContactType.WALL || b.getUserData() == ContactType.WALL) {
+            //     gameScreen.getBall().reverseVelY();
+            // }
 
         }
 

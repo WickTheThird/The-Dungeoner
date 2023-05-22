@@ -5,7 +5,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -13,7 +12,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class MyGdxGame extends Game {
 
 	public static MyGdxGame INSTANCE; // creates one object, and
-	                                 // you can exit it from anywhere (note that there would be only one instance of it...)
+	                                  // you can exit it from anywhere (note that there would be only one instance of it...)
 	private int screenWidth, screenHeight;
 
 	private OrthographicCamera orthographicCamera;
@@ -40,4 +39,3 @@ public class MyGdxGame extends Game {
 	}
 
 }
-
