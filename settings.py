@@ -1,4 +1,0 @@
-WIDTH = 0
-HEIGHT = 0
-TILESIZE = 64
-FPS = 60
