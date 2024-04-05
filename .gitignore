@@ -149,4 +149,54 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+#.idea\/
+
+# Gradle files
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+
+# Android specific (if applicable)
+*-android/.settings/
+*-android/bin/
+
+# Desktop specific
+*-desktop/.settings/
+*-desktop/bin/
+
+# HTML specific (if applicable)
+*-html/.settings/
+*-html/gwt-unitCache/
+*-html/war/WEB-INF/classes/
+*-html/war/WEB-INF/deploy/
+*-html/war/assets/
+*-html/war/
+
+# General
+*/.settings/
+*/bin/
+
+# Compiled classes
+*.class
+
+# Log files
+*.log
+
+# Eclipse files
+.classpath
+.project
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Mac OS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+*.swp
