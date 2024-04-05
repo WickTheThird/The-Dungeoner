@@ -12,12 +12,19 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.Input;
 
+//> TESTING
+import com.mygdx.game.helper.Const;
+import com.mygdx.game.objects.Test;
+
 public class GameScreen extends ScreenAdapter {
 
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private World world;
     private Box2DDebugRenderer box2DDebugRenderer;
+
+    // game objects
+    private Test test;
 
     public GameScreen(OrthographicCamera camera) {
 
@@ -27,10 +34,16 @@ public class GameScreen extends ScreenAdapter {
         this.world = new World(new Vector2(0, 0), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
+        // object init
+        this.test = new Test(32, MyGdxGame.INSTANCE.getScreenHeight() / 2, this);
+
     }
 
     private void update() {
         world.step(1 / 60f, 6, 2);
+
+        this.camera.update();
+        this.test.update();
 
         batch.setProjectionMatrix(camera.combined);
 
@@ -50,7 +63,11 @@ public class GameScreen extends ScreenAdapter {
 
         batch.begin();
 
+        this.test.render(batch);
+
         batch.end();
+
+        this.box2DDebugRenderer.render(world, camera.combined.scl(Const.PPM));
 
     }
 
