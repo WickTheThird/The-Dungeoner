@@ -1,8 +1,8 @@
-package com.mygdx.game.objects;
+package com.dungeoneer.objects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.mygdx.game.GameScreen;
+import com.dungeoneer.screen.GameScreen;
 
 public class Test extends TestBody {
     public Test(float x, float y, GameScreen gameScreen) {

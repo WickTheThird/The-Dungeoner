@@ -1,4 +1,4 @@
-package com.mygdx.game.helper;
+package com.dungeoneer.helper;
 
 public enum ContactType {
 

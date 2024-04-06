@@ -1,12 +1,12 @@
-package com.mygdx.game.objects;
+package com.dungeoneer.objects;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.mygdx.game.GameScreen;
-import com.mygdx.game.helper.BodyTester;
-import com.mygdx.game.helper.Const;
-import com.mygdx.game.helper.ContactType;
+import com.dungeoneer.screen.GameScreen;
+import com.dungeoneer.helper.BodyTester;
+import com.dungeoneer.helper.Const;
+import com.dungeoneer.helper.ContactType;
 import com.badlogic.gdx.Gdx;
 
 public abstract class TestBody {

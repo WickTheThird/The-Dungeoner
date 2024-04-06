@@ -1,4 +1,4 @@
-package com.mygdx.game.helper;
+package com.dungeoneer.helper;
 
 import com.badlogic.gdx.physics.box2d.*;
 
