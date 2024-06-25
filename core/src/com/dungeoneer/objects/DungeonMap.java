@@ -105,9 +105,9 @@ public class DungeonMap{
 
         ArrayList<Integer> permutationTable = this.PermutationArray();
 
-        int valueTopRight = permutationTable.get(permutationTable.get(X + 32) + Y + 32);
-        int valueTopLeft = permutationTable.get(permutationTable.get(X) + Y + 32);
-        int valueBottomRight = permutationTable.get(permutationTable.get(X + 32) + Y);
+        int valueTopRight = permutationTable.get(permutationTable.get(X + 1) + Y + 1);
+        int valueTopLeft = permutationTable.get(permutationTable.get(X) + Y + 1);
+        int valueBottomRight = permutationTable.get(permutationTable.get(X + 1) + Y);
         int valueBottomLeft = permutationTable.get(permutationTable.get(X) + Y);
 
         Vector2 constantTopRight = this.GetConstantVector(valueTopRight);
@@ -124,8 +124,8 @@ public class DungeonMap{
         double v = this.Fade(yf);
 
         double output = this.Lerp(u, 
-                                  this.Lerp(v, (double) dotBottomLeft, (double) dotTopLeft),
-                                  this.Lerp(v, (double) dotTopRight, (double) dotBottomRight)
+                                  this.Lerp(u, (double) dotTopLeft, (double) dotTopRight),
+                                  this.Lerp(u, (double) dotBottomLeft, (double) dotBottomRight)
                                  );
 
         System.out.println(String.valueOf(output));
