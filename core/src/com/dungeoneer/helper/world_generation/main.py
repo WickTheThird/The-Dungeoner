@@ -21,6 +21,9 @@ class World():
         self.min_val = min(flat_list)
         self.max_val = max(flat_list)
 
+        self.tile_map = self.create_tile_map([5, 5, 30, 5, 70, 5, 5]) # those weights generates islands
+        self.create_tile_map_file()
+
 
     def generate_noise_map(self, size_x, size_y, random_seed):
 
@@ -52,7 +55,7 @@ class World():
 
         try:
             self.path += self.world_name + '/'
-            os.mkdir(self.path + self.world_name)
+            os.mkdir(self.path)
 
         except Exception:
             entries = os.listdir(self.path)
@@ -69,21 +72,79 @@ class World():
 
 
     def create_noise_map_file(self):
-
         noise_map = self.get_noise_map()
         with open(self.path + "noise_map.txt", 'w') as file:
-
             for row in noise_map:
                 file.write(' '.join(map(lambda x : str(x), row)) + '\n')
 
 
-    def create_tile_map_file(self):
-        pass 
+    def create_tile_map(self, weights):
 
+        # Terrain Types --> TODO You will have to add more to this as we go
+        OCEAN = 0
+        OCEAN2 = 1
+        OCEAN3 = 2
+        BEACH = 3
+        GRASS = 4
+        MOUNTAIN = 5
+        SNOW = 6
+
+        ALL_TERRAIN_TYPES = [OCEAN, OCEAN2, OCEAN3, BEACH, GRASS, MOUNTAIN, SNOW]
+
+        # CALUCLATOR
+        total_weights = sum(weights)
+        total_range = self.max_val - self.min_val
+
+        # MAX height for each teren type
+        max_terrain_heights = []
+        previous_height = self.min_val
+        for terrain_type in ALL_TERRAIN_TYPES:
+            height = total_range * (weights[terrain_type] / total_weights) + previous_height
+            max_terrain_heights.append(height)
+            previous_height = height
+        max_terrain_heights[SNOW] = self.max_val
+
+        map_int = []
+
+        for row in self.get_noise_map():
+            map_row = []
+            for value in row:
+                for terrain_type in ALL_TERRAIN_TYPES:
+                    if value <= max_terrain_heights[terrain_type]:
+                        map_row.append(terrain_type)
+                        break
+            map_int.append(map_row)
+
+        return map_int
+    
+    def create_tile_map_file(self):
+        tiled_map = self.get_tiled_map()
+        mapper = {
+                0:":",
+                1:";",
+                2:".",
+                3:".",
+                4:"#",
+                5:"A",
+                6:"*",
+        }
+        tile_map_strings = []
+
+        for row in tiled_map:
+            mapped_row = "".join(mapper[col] for col in row)
+            tile_map_strings.append(mapped_row)
+
+        with open(os.path.join(self.path, "tile_map.txt"), 'w') as file:
+            for row_str in tile_map_strings:
+                file.write(row_str + '\n')
 
     # Getters and setters
     def get_noise_map(self):
         return self.noise_map
+
+    
+    def get_tiled_map(self):
+        return self.tile_map
 
 
     def get_min_value(self):
@@ -100,24 +161,4 @@ class World():
 
 
 if __name__ == '__main__':
-
-    """
-    1. A string of 8 characters: 012345678 [each character has a range between 0 and and 9]
-        >> Correspondence:
-            > [0] MOUNTAINS
-            > [1] PEAKS
-            > [2] DEPTH1
-            > [3] DEPTH2
-            > [4] DEPTH3
-            > [5] FIELD
-            > [6] EDGE
-    2. SIZE_X
-    3. SIZE_Y
-    4. World Name
-    """
-
-    for i in range(0, len(sys.argv)):
-        print(f"{sys.argv[i]}")
-
-    world = World(256, 256, world_name="Testing")
-    # noise_map = world.get_noise_map()
+    world = World(1024, 1024, world_name="BLAH")
